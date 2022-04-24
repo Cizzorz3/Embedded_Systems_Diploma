@@ -1,0 +1,23 @@
+/*
+ * ex3.c
+ *
+ *  Created on: Jan 21, 2022
+ *      Author: mohamed adel
+ */
+
+
+#include<stdio.h>
+
+void main(){
+
+	int x , y , sum;
+	printf("Enter two integers: ");
+	fflush(stdin),fflush(stdout);
+	scanf("%d %d",&x,&y);
+	sum=x+y;
+	printf("Sum: %d",sum);
+
+
+
+
+}

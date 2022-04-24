@@ -1,0 +1,32 @@
+/*
+ * ex6.c
+ *
+ *  Created on: Jan 21, 2022
+ *      Author: mohamed adel
+ */
+
+
+#include<stdio.h>
+void main(){
+
+	float a ,b ,c;
+	printf("Enter value of a: ");
+	fflush(stdin),fflush(stdout);
+	scanf("%f",&a);
+	printf("Enter value of b: ");
+	fflush(stdin),fflush(stdout);
+	scanf("%f",&b);
+	c=b;
+	b=a;
+	a=c;
+	printf("After swapping, value of a = %.2f \n",a);
+	printf("After swapping, value of b = %.1f",b);
+
+
+
+
+
+
+
+
+}

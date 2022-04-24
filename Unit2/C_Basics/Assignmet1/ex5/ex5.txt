@@ -1,0 +1,18 @@
+/*
+ * ex5.c
+ *
+ *  Created on: Jan 21, 2022
+ *      Author: mohamed adel
+ */
+
+#include<stdio.h>
+void main(){
+
+	char a;
+	printf("Enter a character: ");
+	fflush(stdin),fflush(stdout);
+	scanf("%c",&a);
+	printf("%d",a);
+
+
+}
