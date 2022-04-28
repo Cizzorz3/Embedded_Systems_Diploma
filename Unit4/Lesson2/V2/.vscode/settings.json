@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "us.h": "c",
+        "dc.h": "c",
+        "ca.h": "c",
+        "DC.C": "cpp",
+        "state.h": "c",
+        "DA.C": "cpp"
+    }
+}
