@@ -92,11 +92,11 @@ OUTPUT(learn_in_depth.elf elf32-littlearm)
  .debug_line    0x00000000      0x160 main.o
  .debug_line    0x00000160       0xff startup.o
 
-.debug_str      0x00000000      0x581
- .debug_str     0x00000000      0x502 main.o
-                                0x56f (size before relaxing)
- .debug_str     0x00000502       0x7f startup.o
-                                0x1c9 (size before relaxing)
+.debug_str      0x00000000      0x59b
+ .debug_str     0x00000000      0x51c main.o
+                                0x589 (size before relaxing)
+ .debug_str     0x0000051c       0x7f startup.o
+                                0x1e3 (size before relaxing)
 
 .comment        0x00000000       0x7e
  .comment       0x00000000       0x7e main.o
