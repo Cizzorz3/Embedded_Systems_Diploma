@@ -1,0 +1,4 @@
+1 Mohamed Adel 3.6 10 1 10 9 5
+2 Omar Ahmed 3.7 2 23 102 99 108
+3 ali mohamed 3.6 5 210 103 99 101
+5 ahmed mohamed 3.4 9 21 50 12 183
