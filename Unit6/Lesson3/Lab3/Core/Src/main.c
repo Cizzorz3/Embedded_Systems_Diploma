@@ -14,12 +14,13 @@ typedef volatileunsignedintvuint32_t;
 int main(void)
 {
 //InitGPIOA
-RCC_CR |= 1<<24;
+
 RCC_APB2ENR |= 1<<2;
 RCC_CFGR |= (0b10<<0);
 RCC_CFGR |= (0b0110<<18);
 RCC_CFGR |= (0b100<<8);
 RCC_CFGR |= (0b101<<11);
+RCC_CR |= 1<<24;
 
 GPIOA_CRH &= 0xFF0FFFFF;
 GPIOA_CRH |= 0x00200000;

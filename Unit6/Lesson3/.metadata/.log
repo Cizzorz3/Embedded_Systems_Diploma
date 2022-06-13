@@ -19,3 +19,18 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-06-07 21:01:38.019
 !MESSAGE Indexed 'Lab3' (18 sources, 19 headers) in 0.606 sec: 1,011 declarations; 4,447 references; 0 unresolved inclusions; 39 syntax errors; 2,041 unresolved names (27%)
+!SESSION 2022-06-07 21:55:02.350 -----------------------------------------------
+eclipse.buildId=Version 1.4.0
+java.version=1.8.0_252
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-06-07 21:55:08.944
+!MESSAGE Log4j initialized with config file E:\Courses\Embedded_Systems_Course\Embedded_Systems_Online_Diploma\Unit6\Lesson3\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-06-07 21:55:16.628
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2022-06-07 21:55:17.224
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
