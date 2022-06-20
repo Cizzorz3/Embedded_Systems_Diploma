@@ -68,7 +68,7 @@ void delay_ms(unsigned int p)
 	//delay function
 	unsigned int i ,j;
 	for(i=0;i<p;i++ ){
-		for(j=0;j<p;j++);
+		for(j=0;j<255;j++);
 	}
 }
 int main ()
