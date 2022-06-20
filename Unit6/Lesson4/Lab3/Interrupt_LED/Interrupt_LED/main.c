@@ -38,6 +38,7 @@ ISR (INT0_vect)
 	//output 1 on PD5
 	PORTD |= (1<<5);
 	_delay_ms(10000);
+	GIFR
 	//Clearing PD5
 	PORTD &= ~(1<<5);
 	

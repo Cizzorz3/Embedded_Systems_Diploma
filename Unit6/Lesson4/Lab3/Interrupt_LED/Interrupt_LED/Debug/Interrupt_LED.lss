@@ -71,34 +71,39 @@ Disassembly of section .text:
 #include <util/delay.h>
 int main(void)
 {
-	//GICR |= 0xC1;
+	//Enabling the interrupts of INT0 , INT1 ,INT2 of the General Interrupt Control Register to 1110 0000
 	GICR |= 0xE0;
   6c:	8b b7       	in	r24, 0x3b	; 59
   6e:	80 6e       	ori	r24, 0xE0	; 224
   70:	8b bf       	out	0x3b, r24	; 59
+	// Choosing the	edge detection for the pins of the MCU Control Register to for rising edge (11) for any logic (01)
 	MCUCR |= 0xD;
   72:	85 b7       	in	r24, 0x35	; 53
   74:	8d 60       	ori	r24, 0x0D	; 13
   76:	85 bf       	out	0x35, r24	; 53
+	//Choosing falling edge in ISC2 for the INT2 
 	MCUCSR |= (0<<6);
   78:	84 b7       	in	r24, 0x34	; 52
   7a:	84 bf       	out	0x34, r24	; 52
+	//Enabling all the global interrupts
 	sei();
   7c:	78 94       	sei
+	//setting (PD7 PD6 PD5 as outputs ), (PD2 PD3 as inputs)
 	DDRD |= 0b11100000 ;
   7e:	81 b3       	in	r24, 0x11	; 17
   80:	80 6e       	ori	r24, 0xE0	; 224
   82:	81 bb       	out	0x11, r24	; 17
+	//setting PORTB as inputs
 	DDRB |=0;
   84:	87 b3       	in	r24, 0x17	; 23
   86:	87 bb       	out	0x17, r24	; 23
   88:	ff cf       	rjmp	.-2      	; 0x88 <main+0x1c>
 
 0000008a <__vector_1>:
-    /* Replace with your application code */
     while (1) ;
 }
 
+//INT0 interrupt handler
 ISR (INT0_vect) 
 {
   8a:	1f 92       	push	r1
@@ -109,6 +114,7 @@ ISR (INT0_vect)
   94:	2f 93       	push	r18
   96:	8f 93       	push	r24
   98:	9f 93       	push	r25
+	//output 1 on PD5
 	PORTD |= (1<<5);
   9a:	82 b3       	in	r24, 0x12	; 18
   9c:	80 62       	ori	r24, 0x20	; 32
@@ -119,16 +125,17 @@ ISR (INT0_vect)
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  a0:	2f e7       	ldi	r18, 0x7F	; 127
-  a2:	84 e8       	ldi	r24, 0x84	; 132
-  a4:	9e e1       	ldi	r25, 0x1E	; 30
+  a0:	2f ef       	ldi	r18, 0xFF	; 255
+  a2:	8a e1       	ldi	r24, 0x1A	; 26
+  a4:	97 eb       	ldi	r25, 0xB7	; 183
   a6:	21 50       	subi	r18, 0x01	; 1
   a8:	80 40       	sbci	r24, 0x00	; 0
   aa:	90 40       	sbci	r25, 0x00	; 0
   ac:	e1 f7       	brne	.-8      	; 0xa6 <__vector_1+0x1c>
   ae:	00 c0       	rjmp	.+0      	; 0xb0 <__vector_1+0x26>
   b0:	00 00       	nop
-	_delay_ms(10000);
+	_delay_ms(60000);
+	//Clearing PD5
 	PORTD &= ~(1<<5);
   b2:	82 b3       	in	r24, 0x12	; 18
   b4:	8f 7d       	andi	r24, 0xDF	; 223
@@ -155,6 +162,7 @@ ISR (INT1_vect)
   d2:	2f 93       	push	r18
   d4:	8f 93       	push	r24
   d6:	9f 93       	push	r25
+	//output 1 on PD6
 	PORTD |= (1<<6);
   d8:	82 b3       	in	r24, 0x12	; 18
   da:	80 64       	ori	r24, 0x40	; 64
@@ -169,6 +177,7 @@ ISR (INT1_vect)
   ec:	00 c0       	rjmp	.+0      	; 0xee <__vector_2+0x26>
   ee:	00 00       	nop
 	_delay_ms(10000);
+	//Clearing PD6
 	PORTD &= ~(1<<6);
   f0:	82 b3       	in	r24, 0x12	; 18
   f2:	8f 7b       	andi	r24, 0xBF	; 191
@@ -194,6 +203,7 @@ ISR (INT2_vect)
  110:	2f 93       	push	r18
  112:	8f 93       	push	r24
  114:	9f 93       	push	r25
+	//output 1 on PD7
 	PORTD |=(1<<7);
  116:	82 b3       	in	r24, 0x12	; 18
  118:	80 68       	ori	r24, 0x80	; 128
@@ -208,6 +218,7 @@ ISR (INT2_vect)
  12a:	00 c0       	rjmp	.+0      	; 0x12c <__vector_3+0x26>
  12c:	00 00       	nop
 	_delay_ms(10000);
+	//Clearing PD7
 	PORTD &= ~(1<<7);
  12e:	82 b3       	in	r24, 0x12	; 18
  130:	8f 77       	andi	r24, 0x7F	; 127
