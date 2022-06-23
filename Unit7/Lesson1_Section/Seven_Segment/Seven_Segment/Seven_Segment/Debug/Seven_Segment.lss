@@ -3,29 +3,29 @@ Seven_Segment.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000001e0  00000000  00000000  00000074  2**1
+  0 .text         00000186  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         0000000a  00800060  000001e0  00000254  2**0
+  1 .data         00000000  00800060  00800060  000001da  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  0000025e  2**0
+  2 .comment      00000030  00000000  00000000  000001da  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000290  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000020c  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000030  00000000  00000000  000002cc  2**0
+  4 .debug_aranges 00000030  00000000  00000000  00000248  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000005f0  00000000  00000000  000002fc  2**0
+  5 .debug_info   000005f0  00000000  00000000  00000278  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 0000057a  00000000  00000000  000008ec  2**0
+  6 .debug_abbrev 0000057a  00000000  00000000  00000868  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000253  00000000  00000000  00000e66  2**0
+  7 .debug_line   0000022f  00000000  00000000  00000de2  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000074  00000000  00000000  000010bc  2**2
+  8 .debug_frame  00000074  00000000  00000000  00001014  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    0000032f  00000000  00000000  00001130  2**0
+  9 .debug_str    0000032f  00000000  00000000  00001088  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000000cb  00000000  00000000  0000145f  2**0
+ 10 .debug_loc    000000cb  00000000  00000000  000013b7  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000020  00000000  00000000  0000152a  2**0
+ 11 .debug_ranges 00000020  00000000  00000000  00001482  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -65,16 +65,16 @@ Disassembly of section .text:
   60:	10 e0       	ldi	r17, 0x00	; 0
   62:	a0 e6       	ldi	r26, 0x60	; 96
   64:	b0 e0       	ldi	r27, 0x00	; 0
-  66:	e0 ee       	ldi	r30, 0xE0	; 224
+  66:	e6 e8       	ldi	r30, 0x86	; 134
   68:	f1 e0       	ldi	r31, 0x01	; 1
   6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
   6c:	05 90       	lpm	r0, Z+
   6e:	0d 92       	st	X+, r0
-  70:	aa 36       	cpi	r26, 0x6A	; 106
+  70:	a0 36       	cpi	r26, 0x60	; 96
   72:	b1 07       	cpc	r27, r17
   74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
-  76:	0e 94 84 00 	call	0x108	; 0x108 <main>
-  7a:	0c 94 ee 00 	jmp	0x1dc	; 0x1dc <_exit>
+  76:	0e 94 7f 00 	call	0xfe	; 0xfe <main>
+  7a:	0c 94 c1 00 	jmp	0x182	; 0x182 <_exit>
 
 0000007e <__bad_interrupt>:
   7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -90,236 +90,192 @@ void gpio_init(void)
   84:	df 93       	push	r29
   86:	cd b7       	in	r28, 0x3d	; 61
   88:	de b7       	in	r29, 0x3e	; 62
-	DDRC_Base = 1 ;	
+	DDRC_Base = 0xff;	
   8a:	84 e3       	ldi	r24, 0x34	; 52
   8c:	90 e0       	ldi	r25, 0x00	; 0
-  8e:	21 e0       	ldi	r18, 0x01	; 1
+  8e:	2f ef       	ldi	r18, 0xFF	; 255
   90:	30 e0       	ldi	r19, 0x00	; 0
   92:	fc 01       	movw	r30, r24
   94:	31 83       	std	Z+1, r19	; 0x01
   96:	20 83       	st	Z, r18
-	PORTC_Base =  0;
-  98:	85 e3       	ldi	r24, 0x35	; 53
-  9a:	90 e0       	ldi	r25, 0x00	; 0
-  9c:	fc 01       	movw	r30, r24
-  9e:	11 82       	std	Z+1, r1	; 0x01
-  a0:	10 82       	st	Z, r1
 }
-  a2:	00 00       	nop
-  a4:	df 91       	pop	r29
-  a6:	cf 91       	pop	r28
-  a8:	08 95       	ret
+  98:	00 00       	nop
+  9a:	df 91       	pop	r29
+  9c:	cf 91       	pop	r28
+  9e:	08 95       	ret
 
-000000aa <delay_ms>:
+000000a0 <delay_ms>:
 
 void delay_ms(uint32_t x)
 {
-  aa:	cf 93       	push	r28
-  ac:	df 93       	push	r29
-  ae:	00 d0       	rcall	.+0      	; 0xb0 <delay_ms+0x6>
-  b0:	00 d0       	rcall	.+0      	; 0xb2 <delay_ms+0x8>
-  b2:	00 d0       	rcall	.+0      	; 0xb4 <delay_ms+0xa>
-  b4:	cd b7       	in	r28, 0x3d	; 61
-  b6:	de b7       	in	r29, 0x3e	; 62
-  b8:	9e 83       	std	Y+6, r25	; 0x06
-  ba:	8d 83       	std	Y+5, r24	; 0x05
+  a0:	cf 93       	push	r28
+  a2:	df 93       	push	r29
+  a4:	00 d0       	rcall	.+0      	; 0xa6 <delay_ms+0x6>
+  a6:	00 d0       	rcall	.+0      	; 0xa8 <delay_ms+0x8>
+  a8:	00 d0       	rcall	.+0      	; 0xaa <delay_ms+0xa>
+  aa:	cd b7       	in	r28, 0x3d	; 61
+  ac:	de b7       	in	r29, 0x3e	; 62
+  ae:	9e 83       	std	Y+6, r25	; 0x06
+  b0:	8d 83       	std	Y+5, r24	; 0x05
 	uint32_t i , j;
 	for(i=0;i<x;i++)
-  bc:	1a 82       	std	Y+2, r1	; 0x02
-  be:	19 82       	std	Y+1, r1	; 0x01
-  c0:	12 c0       	rjmp	.+36     	; 0xe6 <delay_ms+0x3c>
+  b2:	1a 82       	std	Y+2, r1	; 0x02
+  b4:	19 82       	std	Y+1, r1	; 0x01
+  b6:	12 c0       	rjmp	.+36     	; 0xdc <delay_ms+0x3c>
 	{
 		for(j=0;j<255;j++);
-  c2:	1c 82       	std	Y+4, r1	; 0x04
-  c4:	1b 82       	std	Y+3, r1	; 0x03
-  c6:	05 c0       	rjmp	.+10     	; 0xd2 <delay_ms+0x28>
+  b8:	1c 82       	std	Y+4, r1	; 0x04
+  ba:	1b 82       	std	Y+3, r1	; 0x03
+  bc:	05 c0       	rjmp	.+10     	; 0xc8 <delay_ms+0x28>
+  be:	8b 81       	ldd	r24, Y+3	; 0x03
+  c0:	9c 81       	ldd	r25, Y+4	; 0x04
+  c2:	01 96       	adiw	r24, 0x01	; 1
+  c4:	9c 83       	std	Y+4, r25	; 0x04
+  c6:	8b 83       	std	Y+3, r24	; 0x03
   c8:	8b 81       	ldd	r24, Y+3	; 0x03
   ca:	9c 81       	ldd	r25, Y+4	; 0x04
-  cc:	01 96       	adiw	r24, 0x01	; 1
-  ce:	9c 83       	std	Y+4, r25	; 0x04
-  d0:	8b 83       	std	Y+3, r24	; 0x03
-  d2:	8b 81       	ldd	r24, Y+3	; 0x03
-  d4:	9c 81       	ldd	r25, Y+4	; 0x04
-  d6:	8f 3f       	cpi	r24, 0xFF	; 255
-  d8:	91 05       	cpc	r25, r1
-  da:	b0 f3       	brcs	.-20     	; 0xc8 <delay_ms+0x1e>
+  cc:	8f 3f       	cpi	r24, 0xFF	; 255
+  ce:	91 05       	cpc	r25, r1
+  d0:	b0 f3       	brcs	.-20     	; 0xbe <delay_ms+0x1e>
 }
 
 void delay_ms(uint32_t x)
 {
 	uint32_t i , j;
 	for(i=0;i<x;i++)
-  dc:	89 81       	ldd	r24, Y+1	; 0x01
-  de:	9a 81       	ldd	r25, Y+2	; 0x02
-  e0:	01 96       	adiw	r24, 0x01	; 1
-  e2:	9a 83       	std	Y+2, r25	; 0x02
-  e4:	89 83       	std	Y+1, r24	; 0x01
-  e6:	29 81       	ldd	r18, Y+1	; 0x01
-  e8:	3a 81       	ldd	r19, Y+2	; 0x02
-  ea:	8d 81       	ldd	r24, Y+5	; 0x05
-  ec:	9e 81       	ldd	r25, Y+6	; 0x06
-  ee:	28 17       	cp	r18, r24
-  f0:	39 07       	cpc	r19, r25
-  f2:	38 f3       	brcs	.-50     	; 0xc2 <delay_ms+0x18>
+  d2:	89 81       	ldd	r24, Y+1	; 0x01
+  d4:	9a 81       	ldd	r25, Y+2	; 0x02
+  d6:	01 96       	adiw	r24, 0x01	; 1
+  d8:	9a 83       	std	Y+2, r25	; 0x02
+  da:	89 83       	std	Y+1, r24	; 0x01
+  dc:	29 81       	ldd	r18, Y+1	; 0x01
+  de:	3a 81       	ldd	r19, Y+2	; 0x02
+  e0:	8d 81       	ldd	r24, Y+5	; 0x05
+  e2:	9e 81       	ldd	r25, Y+6	; 0x06
+  e4:	28 17       	cp	r18, r24
+  e6:	39 07       	cpc	r19, r25
+  e8:	38 f3       	brcs	.-50     	; 0xb8 <delay_ms+0x18>
 	{
 		for(j=0;j<255;j++);
 	}
 }
-  f4:	00 00       	nop
-  f6:	26 96       	adiw	r28, 0x06	; 6
-  f8:	0f b6       	in	r0, 0x3f	; 63
-  fa:	f8 94       	cli
-  fc:	de bf       	out	0x3e, r29	; 62
-  fe:	0f be       	out	0x3f, r0	; 63
- 100:	cd bf       	out	0x3d, r28	; 61
- 102:	df 91       	pop	r29
- 104:	cf 91       	pop	r28
- 106:	08 95       	ret
+  ea:	00 00       	nop
+  ec:	26 96       	adiw	r28, 0x06	; 6
+  ee:	0f b6       	in	r0, 0x3f	; 63
+  f0:	f8 94       	cli
+  f2:	de bf       	out	0x3e, r29	; 62
+  f4:	0f be       	out	0x3f, r0	; 63
+  f6:	cd bf       	out	0x3d, r28	; 61
+  f8:	df 91       	pop	r29
+  fa:	cf 91       	pop	r28
+  fc:	08 95       	ret
 
-00000108 <main>:
+000000fe <main>:
 
 int main(void)
 {
- 108:	cf 93       	push	r28
- 10a:	df 93       	push	r29
- 10c:	00 d0       	rcall	.+0      	; 0x10e <main+0x6>
- 10e:	cd b7       	in	r28, 0x3d	; 61
- 110:	de b7       	in	r29, 0x3e	; 62
+  fe:	cf 93       	push	r28
+ 100:	df 93       	push	r29
+ 102:	00 d0       	rcall	.+0      	; 0x104 <main+0x6>
+ 104:	cd b7       	in	r28, 0x3d	; 61
+ 106:	de b7       	in	r29, 0x3e	; 62
 	unsigned char flag1 , flag2 ;
     gpio_init();
- 112:	0e 94 41 00 	call	0x82	; 0x82 <gpio_init>
+ 108:	0e 94 41 00 	call	0x82	; 0x82 <gpio_init>
     while (1) 
     {
 			for(flag1=0 ; flag1 <=9 ; flag1++)
- 116:	19 82       	std	Y+1, r1	; 0x01
- 118:	5c c0       	rjmp	.+184    	; 0x1d2 <main+0xca>
+ 10c:	19 82       	std	Y+1, r1	; 0x01
+ 10e:	35 c0       	rjmp	.+106    	; 0x17a <main+0x7c>
 			{
 				for(flag2=0;flag2<=9;flag2++)
- 11a:	1a 82       	std	Y+2, r1	; 0x02
- 11c:	53 c0       	rjmp	.+166    	; 0x1c4 <main+0xbc>
+ 110:	1a 82       	std	Y+2, r1	; 0x02
+ 112:	29 c0       	rjmp	.+82     	; 0x166 <main+0x68>
 				{
-					Sit_Bit(PORTC_Base,2);
- 11e:	85 e3       	ldi	r24, 0x35	; 53
- 120:	90 e0       	ldi	r25, 0x00	; 0
- 122:	25 e3       	ldi	r18, 0x35	; 53
- 124:	30 e0       	ldi	r19, 0x00	; 0
- 126:	f9 01       	movw	r30, r18
- 128:	20 81       	ld	r18, Z
- 12a:	31 81       	ldd	r19, Z+1	; 0x01
- 12c:	24 60       	ori	r18, 0x04	; 4
- 12e:	fc 01       	movw	r30, r24
- 130:	31 83       	std	Z+1, r19	; 0x01
- 132:	20 83       	st	Z, r18
-					Clear_Bit(PORTC_Base,3);
- 134:	85 e3       	ldi	r24, 0x35	; 53
- 136:	90 e0       	ldi	r25, 0x00	; 0
- 138:	25 e3       	ldi	r18, 0x35	; 53
- 13a:	30 e0       	ldi	r19, 0x00	; 0
- 13c:	f9 01       	movw	r30, r18
- 13e:	20 81       	ld	r18, Z
- 140:	31 81       	ldd	r19, Z+1	; 0x01
- 142:	27 7f       	andi	r18, 0xF7	; 247
- 144:	fc 01       	movw	r30, r24
- 146:	31 83       	std	Z+1, r19	; 0x01
- 148:	20 83       	st	Z, r18
-					PORTC_Base = segment[flag1];
- 14a:	85 e3       	ldi	r24, 0x35	; 53
- 14c:	90 e0       	ldi	r25, 0x00	; 0
- 14e:	29 81       	ldd	r18, Y+1	; 0x01
- 150:	22 2f       	mov	r18, r18
- 152:	30 e0       	ldi	r19, 0x00	; 0
- 154:	20 5a       	subi	r18, 0xA0	; 160
- 156:	3f 4f       	sbci	r19, 0xFF	; 255
- 158:	f9 01       	movw	r30, r18
- 15a:	20 81       	ld	r18, Z
- 15c:	22 2f       	mov	r18, r18
- 15e:	30 e0       	ldi	r19, 0x00	; 0
- 160:	fc 01       	movw	r30, r24
- 162:	31 83       	std	Z+1, r19	; 0x01
- 164:	20 83       	st	Z, r18
-					delay_ms(60);
- 166:	8c e3       	ldi	r24, 0x3C	; 60
- 168:	90 e0       	ldi	r25, 0x00	; 0
- 16a:	0e 94 55 00 	call	0xaa	; 0xaa <delay_ms>
-					Sit_Bit(PORTC_Base,3);
- 16e:	85 e3       	ldi	r24, 0x35	; 53
- 170:	90 e0       	ldi	r25, 0x00	; 0
- 172:	25 e3       	ldi	r18, 0x35	; 53
- 174:	30 e0       	ldi	r19, 0x00	; 0
- 176:	f9 01       	movw	r30, r18
- 178:	20 81       	ld	r18, Z
- 17a:	31 81       	ldd	r19, Z+1	; 0x01
- 17c:	28 60       	ori	r18, 0x08	; 8
- 17e:	fc 01       	movw	r30, r24
- 180:	31 83       	std	Z+1, r19	; 0x01
- 182:	20 83       	st	Z, r18
-					Clear_Bit(PORTC_Base,2);
- 184:	85 e3       	ldi	r24, 0x35	; 53
- 186:	90 e0       	ldi	r25, 0x00	; 0
- 188:	25 e3       	ldi	r18, 0x35	; 53
- 18a:	30 e0       	ldi	r19, 0x00	; 0
- 18c:	f9 01       	movw	r30, r18
- 18e:	20 81       	ld	r18, Z
- 190:	31 81       	ldd	r19, Z+1	; 0x01
- 192:	2b 7f       	andi	r18, 0xFB	; 251
- 194:	fc 01       	movw	r30, r24
- 196:	31 83       	std	Z+1, r19	; 0x01
- 198:	20 83       	st	Z, r18
-					PORTC_Base = segment[flag2];
- 19a:	85 e3       	ldi	r24, 0x35	; 53
- 19c:	90 e0       	ldi	r25, 0x00	; 0
- 19e:	2a 81       	ldd	r18, Y+2	; 0x02
- 1a0:	22 2f       	mov	r18, r18
- 1a2:	30 e0       	ldi	r19, 0x00	; 0
- 1a4:	20 5a       	subi	r18, 0xA0	; 160
- 1a6:	3f 4f       	sbci	r19, 0xFF	; 255
- 1a8:	f9 01       	movw	r30, r18
- 1aa:	20 81       	ld	r18, Z
- 1ac:	22 2f       	mov	r18, r18
- 1ae:	30 e0       	ldi	r19, 0x00	; 0
- 1b0:	fc 01       	movw	r30, r24
- 1b2:	31 83       	std	Z+1, r19	; 0x01
- 1b4:	20 83       	st	Z, r18
-					delay_ms(60);	   				
- 1b6:	8c e3       	ldi	r24, 0x3C	; 60
- 1b8:	90 e0       	ldi	r25, 0x00	; 0
- 1ba:	0e 94 55 00 	call	0xaa	; 0xaa <delay_ms>
+					
+					PORTC_Base = 0b1011 | (flag1<<4);
+ 114:	85 e3       	ldi	r24, 0x35	; 53
+ 116:	90 e0       	ldi	r25, 0x00	; 0
+ 118:	29 81       	ldd	r18, Y+1	; 0x01
+ 11a:	22 2f       	mov	r18, r18
+ 11c:	30 e0       	ldi	r19, 0x00	; 0
+ 11e:	22 95       	swap	r18
+ 120:	32 95       	swap	r19
+ 122:	30 7f       	andi	r19, 0xF0	; 240
+ 124:	32 27       	eor	r19, r18
+ 126:	20 7f       	andi	r18, 0xF0	; 240
+ 128:	32 27       	eor	r19, r18
+ 12a:	2b 60       	ori	r18, 0x0B	; 11
+ 12c:	fc 01       	movw	r30, r24
+ 12e:	31 83       	std	Z+1, r19	; 0x01
+ 130:	20 83       	st	Z, r18
+					delay_ms(300);
+ 132:	8c e2       	ldi	r24, 0x2C	; 44
+ 134:	91 e0       	ldi	r25, 0x01	; 1
+ 136:	0e 94 50 00 	call	0xa0	; 0xa0 <delay_ms>
+					PORTC_Base = 0b0111 | (flag2<<4);
+ 13a:	85 e3       	ldi	r24, 0x35	; 53
+ 13c:	90 e0       	ldi	r25, 0x00	; 0
+ 13e:	2a 81       	ldd	r18, Y+2	; 0x02
+ 140:	22 2f       	mov	r18, r18
+ 142:	30 e0       	ldi	r19, 0x00	; 0
+ 144:	22 95       	swap	r18
+ 146:	32 95       	swap	r19
+ 148:	30 7f       	andi	r19, 0xF0	; 240
+ 14a:	32 27       	eor	r19, r18
+ 14c:	20 7f       	andi	r18, 0xF0	; 240
+ 14e:	32 27       	eor	r19, r18
+ 150:	27 60       	ori	r18, 0x07	; 7
+ 152:	fc 01       	movw	r30, r24
+ 154:	31 83       	std	Z+1, r19	; 0x01
+ 156:	20 83       	st	Z, r18
+					delay_ms(300);	   				
+ 158:	8c e2       	ldi	r24, 0x2C	; 44
+ 15a:	91 e0       	ldi	r25, 0x01	; 1
+ 15c:	0e 94 50 00 	call	0xa0	; 0xa0 <delay_ms>
     gpio_init();
     while (1) 
     {
 			for(flag1=0 ; flag1 <=9 ; flag1++)
 			{
 				for(flag2=0;flag2<=9;flag2++)
- 1be:	8a 81       	ldd	r24, Y+2	; 0x02
- 1c0:	8f 5f       	subi	r24, 0xFF	; 255
- 1c2:	8a 83       	std	Y+2, r24	; 0x02
- 1c4:	8a 81       	ldd	r24, Y+2	; 0x02
- 1c6:	8a 30       	cpi	r24, 0x0A	; 10
- 1c8:	08 f4       	brcc	.+2      	; 0x1cc <main+0xc4>
- 1ca:	a9 cf       	rjmp	.-174    	; 0x11e <main+0x16>
+ 160:	8a 81       	ldd	r24, Y+2	; 0x02
+ 162:	8f 5f       	subi	r24, 0xFF	; 255
+ 164:	8a 83       	std	Y+2, r24	; 0x02
+ 166:	8a 81       	ldd	r24, Y+2	; 0x02
+ 168:	8a 30       	cpi	r24, 0x0A	; 10
+ 16a:	a0 f2       	brcs	.-88     	; 0x114 <main+0x16>
+					PORTC_Base = 0b1011 | (flag1<<4);
+					delay_ms(300);
+					PORTC_Base = 0b0111 | (flag2<<4);
+					delay_ms(300);	   				
+				}
+				delay_ms(1000);
+ 16c:	88 ee       	ldi	r24, 0xE8	; 232
+ 16e:	93 e0       	ldi	r25, 0x03	; 3
+ 170:	0e 94 50 00 	call	0xa0	; 0xa0 <delay_ms>
 {
 	unsigned char flag1 , flag2 ;
     gpio_init();
     while (1) 
     {
 			for(flag1=0 ; flag1 <=9 ; flag1++)
- 1cc:	89 81       	ldd	r24, Y+1	; 0x01
- 1ce:	8f 5f       	subi	r24, 0xFF	; 255
- 1d0:	89 83       	std	Y+1, r24	; 0x01
- 1d2:	89 81       	ldd	r24, Y+1	; 0x01
- 1d4:	8a 30       	cpi	r24, 0x0A	; 10
- 1d6:	08 f4       	brcc	.+2      	; 0x1da <main+0xd2>
- 1d8:	a0 cf       	rjmp	.-192    	; 0x11a <main+0x12>
-					PORTC_Base = segment[flag2];
-					delay_ms(60);	   				
+ 174:	89 81       	ldd	r24, Y+1	; 0x01
+ 176:	8f 5f       	subi	r24, 0xFF	; 255
+ 178:	89 83       	std	Y+1, r24	; 0x01
+ 17a:	89 81       	ldd	r24, Y+1	; 0x01
+ 17c:	8a 30       	cpi	r24, 0x0A	; 10
+ 17e:	40 f2       	brcs	.-112    	; 0x110 <main+0x12>
+					PORTC_Base = 0b0111 | (flag2<<4);
+					delay_ms(300);	   				
 				}
-				
+				delay_ms(1000);
 			}			
     }
- 1da:	9d cf       	rjmp	.-198    	; 0x116 <main+0xe>
+ 180:	c5 cf       	rjmp	.-118    	; 0x10c <main+0xe>
 
-000001dc <_exit>:
- 1dc:	f8 94       	cli
+00000182 <_exit>:
+ 182:	f8 94       	cli
 
-000001de <__stop_program>:
- 1de:	ff cf       	rjmp	.-2      	; 0x1de <__stop_program>
+00000184 <__stop_program>:
+ 184:	ff cf       	rjmp	.-2      	; 0x184 <__stop_program>

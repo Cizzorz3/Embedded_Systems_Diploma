@@ -16,8 +16,7 @@ char segment[10]={0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};
 #define F_CPU 16000000UL
 void gpio_init(void)
 {
-	DDRC_Base = 1 ;	
-	PORTC_Base =  0;
+	DDRC_Base = 0xff;	
 }
 
 void delay_ms(uint32_t x)
@@ -39,16 +38,13 @@ int main(void)
 			{
 				for(flag2=0;flag2<=9;flag2++)
 				{
-					Sit_Bit(PORTC_Base,2);
-					Clear_Bit(PORTC_Base,3);
-					PORTC_Base = segment[flag1];
-					delay_ms(60);
-					Sit_Bit(PORTC_Base,3);
-					Clear_Bit(PORTC_Base,2);
-					PORTC_Base = segment[flag2];
-					delay_ms(60);	   				
+					
+					PORTC_Base = 0b1011 | (flag1<<4);
+					delay_ms(300);
+					PORTC_Base = 0b0111 | (flag2<<4);
+					delay_ms(300);	   				
 				}
-				
+				delay_ms(1000);
 			}			
     }
 }
