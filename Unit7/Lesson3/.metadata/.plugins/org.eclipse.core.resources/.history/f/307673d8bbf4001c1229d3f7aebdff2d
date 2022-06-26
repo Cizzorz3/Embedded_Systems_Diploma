@@ -1,0 +1,79 @@
+/*
+ * Includes.h
+ *
+ *  Created on: Jun 25, 2022
+ *      Author: Mohamed Adel
+ */
+
+#ifndef INCLUDES_H_
+#define INCLUDES_H_
+
+
+ // *******************Includes*************************************
+#include "stdlib.h"
+
+ // *******************Base Addresses Of Memories *****************
+#define Flash_memory_Base 				0x08000000UL
+#define SRAM_Base						0x20000000UL
+#define System_memory_Base				0x1FFFF000UL
+ //*******************Base Addresses Of Peripherals****************
+
+//Peripheral register : GPIO
+typedef struct
+{
+	volatile uint32_t CRL ;
+	volatile uint32_t CRH ;
+	volatile uint32_t IDR ;
+	volatile uint32_t ODR ;
+	volatile uint32_t BSRR ;
+	volatile uint32_t BRR ;
+	volatile uint32_t LCKR ;
+}GPIO_Typedef;
+
+
+//Peripheral register : RCC
+typedef struct
+{
+	volatile uint32_t CR ;
+	volatile uint32_t CFGR ;
+	volatile uint32_t CIR ;
+	volatile uint32_t APB2RSTR ;
+	volatile uint32_t APB1RSTR ;
+	volatile uint32_t AHBENR ;
+	volatile uint32_t APB2ENR ;
+	volatile uint32_t APB1ENR ;
+	volatile uint32_t BDCR ;
+	volatile uint32_t CSR ;
+	volatile uint32_t AHBSTR ;
+	volatile uint32_t CFGR2 ;
+}RCC_typedef;
+
+//Peripheral register : EXTI
+typedef struct
+{
+	volatile uint32_t IMR ;
+	volatile uint32_t EMR ;
+	volatile uint32_t RTSR ;
+	volatile uint32_t FTSR ;
+	volatile uint32_t SWIER ;
+	volatile uint32_t PR ;
+}EXTI_typedef;
+
+//Peripheral register : AFIO
+typedef struct
+{
+	volatile uint32_t EVCR ;
+	volatile uint32_t MAPR ;
+	volatile uint32_t EXTICR1 ;
+	volatile uint32_t EXTICR2 ;
+	volatile uint32_t EXTICR3 ;
+	volatile uint32_t EXTICR4 ;
+			 uint32_t Reserved ; //0x18
+	volatile uint32_t MAPR2 ;
+
+}AFIO_typedef;
+ // *******************Peripherals Registers**************************
+
+
+
+#endif /* INCLUDES_H_ */

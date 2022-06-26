@@ -1,0 +1,23 @@
+/*
+ * STM_F103C6_GPIO_Driver.h
+ *
+ *  Created on: Jun 25, 2022
+ *      Author: Mohamed Adel
+ */
+
+#ifndef INC_STM_F103C6_GPIO_DRIVER_H_
+#define INC_STM_F103C6_GPIO_DRIVER_H_
+
+//includes
+#include "STM32f103C6.h"
+
+//-------------------------------
+
+//config structure
+
+typedef struct
+{
+
+}GPIO_Pinconfig_t;
+
+#endif /* INC_STM_F103C6_GPIO_DRIVER_H_ */

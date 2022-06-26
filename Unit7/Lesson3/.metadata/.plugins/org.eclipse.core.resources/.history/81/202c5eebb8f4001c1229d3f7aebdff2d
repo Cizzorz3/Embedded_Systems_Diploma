@@ -1,0 +1,26 @@
+/*
+ * Includes.h
+ *
+ *  Created on: Jun 25, 2022
+ *      Author: Mohamed Adel
+ */
+
+#ifndef INCLUDES_H_
+#define INCLUDES_H_
+
+
+ // *******************Includes*************************************
+#include "stdlib.h"
+
+ // *******************Base Addresses Of Memories *****************
+#define Flash_memory_Base 				0x08000000UL
+#define SRAM_Base						0x20000000UL
+#define System_memory_Base				0x1FFFF000UL
+ //*******************Base Addresses Of Peripherals****************
+
+
+ // *******************Peripherals Registers**************************
+
+
+
+#endif /* INCLUDES_H_ */

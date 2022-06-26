@@ -1,0 +1,88 @@
+/*
+ * STM_F103C6_GPIO_Driver.h
+ *
+ *  Created on: Jun 25, 2022
+ *      Author: Mohamed Adel
+ */
+
+#ifndef INC_STM_F103C6_GPIO_DRIVER_H_
+#define INC_STM_F103C6_GPIO_DRIVER_H_
+
+//includes
+#include "STM32f103C6.h"
+
+//-------------------------------
+//configuration structure
+typedef struct
+{
+	uint16_t GPIO_Pin_Number ;
+	uint8_t  GPIO_Pin_Mode ;
+	uint8_t  GPIO_Pin_Speed;
+}GPIO_Pinconfig_t;
+
+//================================
+//Macros Configuration
+//================================
+//@ref GPIO PIN numbers
+#define GPIO_PIN_0			((uint16_t)0x0001)
+#define GPIO_PIN_1			((uint16_t)0x0002)
+#define GPIO_PIN_2			((uint16_t)0x0004)
+#define GPIO_PIN_3			((uint16_t)0x0008)
+#define GPIO_PIN_4			((uint16_t)0x0010)
+#define GPIO_PIN_5			((uint16_t)0x0020)
+#define GPIO_PIN_6			((uint16_t)0x0040)
+#define GPIO_PIN_7			((uint16_t)0x0080)
+#define GPIO_PIN_8			((uint16_t)0x0100)
+#define GPIO_PIN_9			((uint16_t)0x0200)
+#define GPIO_PIN_10			((uint16_t)0x0400)
+#define GPIO_PIN_11			((uint16_t)0x0800)
+#define GPIO_PIN_12			((uint16_t)0x1000)
+#define GPIO_PIN_13			((uint16_t)0x2000)
+#define GPIO_PIN_14			((uint16_t)0x4000)
+#define GPIO_PIN_15			((uint16_t)0x8000)
+#define GPIO_PIN_All		((uint16_t)0xFFFF)
+
+//@ref GPIO Mode define
+//0: Analog mode
+//1: Floating input (reset state)
+//2: Input with pull-up
+//3: pull-down
+//4: General purpose output push-pull
+//5: General purpose output Open-drain
+//6: Alternate function output Push-pull
+//7: Alternate function output Open-drain
+//8: Alternate Function input
+#define GPIO_Analog_Mode								0x0000000u //Analog mode
+#define GPIO_Floating_input_Mode						0x0000001u //Floating input (reset state)
+#define GPIO_Input_with_pull_up_Mode					0x0000002u //Input with pull-up
+#define GPIO_pull_down_Mode								0x0000003u //pull-down
+#define GPIO_output_push_pull_Mode						0x0000004u //General purpose output push-pull
+#define GPIO_output_Open_drain_Mode						0x0000005u //General purpose output Open-drain
+#define GPIO_AF_output_Push_pull_Mode					0x0000006u //Alternate function output Push-pull
+#define GPIO_AF_output_Open_drain_Mode					0x0000007u //Alternate function output Open-drain
+#define GPIO_AF_input_Mode								0x0000008u //Alternate Function input
+
+//@ref GPIO Pin Speed
+//1: Output mode, max speed 10 MHz.
+//2: Output mode, max speed 2 MHz.
+//3: Output mode, max speed 50 MHz
+#define GPIO_SPEED_10M		0x0000001u //max speed 10 MHz.
+#define GPIO_SPEED_2M		0x0000002u //max speed 2 MHz.
+#define GPIO_SPEED_50M		0x0000003u //max speed 50 MHz
+
+//GPIO Values
+#define GPIO_Pin_SET 1
+#define GPIO_Pin_Reset 0
+/*
+//===================================================================================================
+*				APIS Supported by "MCAL GPIO Driver"
+//===================================================================================================
+*/
+
+void MCAL_GPIO_init(GPIO_Typedef* GPIOx,GPIO_Pinconfig_t* PinCofing);
+void MCAL_GPIO_Denit(GPIO_Typedef* GPIOx);
+uint8_t MCAL_GPIO_ReadPin (GPIO_Typedef* GPIOx , uint16_t PinNumber);
+uint16_t MCAL_GPIO_ReadPort (GPIO_Typedef* GPIOx);
+uint8_t MCAL_GPIO_WritePin (GPIO_Typedef* GPIOx , uint16_t PinNumber , uint8_t value);
+uint16_t MCAL_GPIO_WritePort (GPIO_Typedef* GPIOx  , uint16_t value);
+#endif /* INC_STM_F103C6_GPIO_DRIVER_H_ */

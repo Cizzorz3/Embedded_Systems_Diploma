@@ -1,0 +1,25 @@
+/*
+ * Includes.h
+ *
+ *  Created on: Jun 25, 2022
+ *      Author: Mohamed Adel
+ */
+
+#ifndef INCLUDES_H_
+#define INCLUDES_H_
+
+
+ // *******************Includes*************************************
+#include "stdlib.h"
+
+ // *******************Base Addresses Of Memories *****************
+
+
+ //*******************Base Addresses Of Peripherals****************
+
+
+ // *******************Peripherals Registers**************************
+
+
+
+#endif /* INCLUDES_H_ */

@@ -1,0 +1,221 @@
+/*
+ * STM32_F103_C6_GPIO.c
+ *
+ *  Created on: Jun 25, 2022
+ *      Author: Mohamed Adel
+ */
+
+//Includes
+
+#include "STM_F103C6_GPIO_Driver.h"
+
+uint8_t Get_CRLH_Position(uint16_t PinNumber)
+{
+	switch(PinNumber)
+	{
+	case GPIO_PIN_0 :
+		return 0 ;
+		break;
+	case GPIO_PIN_1 :
+		return 4;
+		break;
+	case GPIO_PIN_2 :
+		return 8;
+		break;
+	case GPIO_PIN_3 :
+		return 12;
+		break;
+	case GPIO_PIN_4 :
+		return 16;
+		break;
+	case GPIO_PIN_5 :
+		return 20;
+		break;
+	case GPIO_PIN_6 :
+		return 24;
+		break;
+	case GPIO_PIN_7 :
+		return 28;
+		break;
+	case GPIO_PIN_8 :
+		return 32;
+		break;
+	case GPIO_PIN_9 :
+		return 36;
+		break;
+	case GPIO_PIN_10 :
+		return 40;
+		break;
+	case GPIO_PIN_11 :
+		return 44;
+		break;
+	case GPIO_PIN_12 :
+		return 48;
+		break;
+	case GPIO_PIN_13 :
+		return 52;
+		break;
+	case GPIO_PIN_14 :
+		return 56;
+		break;
+	case GPIO_PIN_15 :
+		return 60;
+		break;
+	}
+	return 0;
+}
+
+/**================================================================
+ * @Fn				- MCAL_GPIO_init
+ * @brief 			- Initializes the GPIOx  peripheral according to the PinConfig
+ * @param [in] 		- GPIOx : to select the GPIO peripheral
+ * @param [in]		- PinConfig : to select the pin configuration
+ * @retval 			- None
+ * Note				- STM32F103C6 MCU  has GPIO A,B,C,D,E
+ * 					- But package LQF48 has only GPIO A,B and part of C/D
+ */
+void MCAL_GPIO_init(GPIO_Typedef* GPIOx,GPIO_Pinconfig_t *PinCofing)
+{
+	//Pin configuration register low CRL from Pin 0 to Pin 7
+	//Pin configuration register high CRH from Pin 8 to Pin 15
+
+	volatile uint32_t * configregister = NULL ;
+	uint8_t PIN_config = 0;
+	configregister = (PinCofing->GPIO_Pin_Number <GPIO_PIN_8 ? &GPIOx->CRL :  &GPIOx->CRH);
+	//clear CNF8[1:0] MODE8[1:0]
+	(*configregister) &=~(0xf<<Get_CRLH_Position(PinCofing->GPIO_Pin_Number));
+
+	//if the pin is output
+	if(PinCofing->GPIO_Pin_Mode == GPIO_AF_output_Open_drain_Mode ||PinCofing->GPIO_Pin_Mode == GPIO_AF_output_Push_pull_Mode || PinCofing->GPIO_Pin_Mode == GPIO_output_Open_drain_Mode || PinCofing->GPIO_Pin_Mode == GPIO_AF_output_Push_pull_Mode)
+	{
+		PIN_config = ((PinCofing->GPIO_Pin_Mode - 4)<<2) | (((PinCofing->GPIO_Pin_Speed))&0x0f);
+
+	}
+	//the pin is input
+	else
+	{
+		if(PinCofing->GPIO_Pin_Mode == GPIO_Floating_input_Mode || PinCofing->GPIO_Pin_Mode== GPIO_Analog_Mode)
+		{
+			PIN_config = ((((PinCofing->GPIO_Pin_Mode)<<2)|0x0 )&0x0f);
+
+		}
+		else if (PinCofing->GPIO_Pin_Mode == GPIO_AF_input_Mode )
+		{
+			PIN_config = ((((GPIO_Floating_input_Mode)<<2)|0x0 )&0x0f);
+
+		}
+		//pull up pull down input
+		else
+		{
+			PIN_config = ((((GPIO_Input_with_pull_up_Mode)<<2)|0x0 )&0x0f);
+			if(PinCofing->GPIO_Pin_Mode == GPIO_Input_with_pull_up_Mode)
+			{
+				GPIOx->ODR |= PinCofing->GPIO_Pin_Number;
+			}
+			else
+			{
+				GPIOx->ODR &=~ PinCofing->GPIO_Pin_Number;
+			}
+		}
+	}
+	(*configregister) |= (PIN_config<<Get_CRLH_Position(PinCofing->GPIO_Pin_Number));
+}
+
+/**================================================================
+ * @Fn				- MCAL_GPIO_Denit
+ * @brief 			- Deinitializes the GPIOx  peripheral
+ * @param [in] 		- GPIOx : to select the GPIO peripheral
+ * @retval 			- None
+ * Note				- STM32F103C6 MCU  has GPIO A,B,C,D,E
+						- But package LQF48 has only GPIO A,B and part of C/D
+ */
+void MCAL_GPIO_Denit(GPIO_Typedef* GPIOx)
+{
+	if(GPIOx == GPIOA)
+	{
+		RCC->APB2RSTR |= (1<<2);
+		RCC->APB2RSTR &=~(1<<2);
+	}
+}
+/**================================================================
+ * @Fn				- MCAL_GPIO_ReadPin
+ * @brief 			- Read the GPIOx value
+ * @param [in] 		- GPIOx : to select the GPIO peripheral
+ * @param [in]		- PinNumber : select the pin number
+ * @retval 			- the value of the gpio pin if it's sit or reset 0,1
+ * Note				- STM32F103C6 MCU  has GPIO A,B,C,D,E
+						- But package LQF48 has only GPIO A,B and part of C/D
+ */
+
+
+uint8_t MCAL_GPIO_ReadPin (GPIO_Typedef* GPIOx , uint16_t PinNumber)
+{
+
+}
+/**================================================================
+ * @Fn				- MCAL_GPIO_ReadPort
+ * @brief 			- Read the GPIOx Port value
+ * @param [in] 		- GPIOx : to select the GPIO peripheral
+ * @retval 			- the value of the gpio port if it's sit or reset 0,1
+ * Note				- STM32F103C6 MCU  has GPIO A,B,C,D,E
+						- But package LQF48 has only GPIO A,B and part of C/D
+ */
+
+
+uint16_t MCAL_GPIO_ReadPort (GPIO_Typedef* GPIOx)
+{
+
+}
+/**================================================================
+ * @Fn				- MCAL_GPIO_WritePin
+ * @brief 			- Write on the GPIOx Pin
+ * @param [in] 		- GPIOx : to select the GPIO peripheral
+ * @param [in] 		- PinNumber : to select the GPIO Pin number
+ * @param [in] 		- value	: to write the value which will be written on the gpio pin
+ * @retval 			- None
+ * Note				- STM32F103C6 MCU  has GPIO A,B,C,D,E
+						- But package LQF48 has only GPIO A,B and part of C/D
+ */
+void MCAL_GPIO_WritePin (GPIO_Typedef* GPIOx , uint16_t PinNumber , uint8_t value)
+{
+
+}
+/**================================================================
+ * @Fn				- MCAL_GPIO_WritePort
+ * @brief 			- Write on the GPIOx Port
+ * @param [in] 		- GPIOx : to select the GPIO peripheral
+ * @param [in] 		- value	: to write the value which will be written on the gpio port
+ * @retval 			- None
+ * Note				- STM32F103C6 MCU  has GPIO A,B,C,D,E
+						- But package LQF48 has only GPIO A,B and part of C/D
+ */
+void MCAL_GPIO_WritePort (GPIO_Typedef* GPIOx  , uint16_t value)
+{
+
+}
+/**================================================================
+ * @Fn				- MCAL_GPIO_TogglePin
+ * @brief 			- Toggle the GPIOx Pin
+ * @param [in] 		- GPIOx : to select the GPIO peripheral
+ * @param [in] 		- PinNumber : to select the GPIO Pin number
+ * @retval 			- None
+ * Note				- STM32F103C6 MCU  has GPIO A,B,C,D,E
+						- But package LQF48 has only GPIO A,B and part of C/D
+ */
+void MCAL_GPIO_TogglePin (GPIO_Typedef* GPIOx , uint16_t PinNumber)
+{
+
+}
+/**================================================================
+ * @Fn				- MCAL_GPIO_LockPin
+ * @brief 			- Lock the GPIOx Pin
+ * @param [in] 		- GPIOx : to select the GPIO peripheral
+ * @param [in] 		- PinNumber : to select the GPIO Pin number
+ * @retval 			- Returns Ok (1) if it's locked and Error(0) if it's unlocked
+ * Note				- STM32F103C6 MCU  has GPIO A,B,C,D,E
+						- But package LQF48 has only GPIO A,B and part of C/D
+ */
+uint8_t MCAL_GPIO_LockPin (GPIO_Typedef* GPIOx , uint16_t PinNumber)
+{
+
+}
