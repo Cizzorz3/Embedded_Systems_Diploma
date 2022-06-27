@@ -1,0 +1,8 @@
+"STM32_F103C6_Drivers/Keypad_Driver/Keypad_Driver.o"
+"STM32_F103C6_Drivers/LCD_Driver/LCD.o"
+"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o"
+"STM32_F103C6_Drivers/Seven_Segment/Seven_segment.o"
+"Src/main.o"
+"Src/syscalls.o"
+"Src/sysmem.o"
+"Startup/startup_stm32f103c6tx.o"
