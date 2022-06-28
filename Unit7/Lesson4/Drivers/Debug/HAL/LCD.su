@@ -1,0 +1,12 @@
+LCD.c:17:6:LCD_Enable_Function	8	static
+LCD.c:28:6:_delay_ms	24	static
+LCD.c:37:6:gpio_init	8	static
+LCD.c:94:6:LCD_CMD	16	static
+LCD.c:110:6:change_to_output	8	static
+LCD.c:147:6:change_to_input	8	static
+LCD.c:174:6:LCD_init	8	static
+LCD.c:194:6:LCD_Write	16	static
+LCD.c:208:6:is_busy	8	static
+LCD.c:225:6:clear_screen	8	static
+LCD.c:230:6:Send_string	24	static
+LCD.c:254:6:LCD_XY	16	static
