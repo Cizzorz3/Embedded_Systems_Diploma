@@ -1,0 +1,20 @@
+/*
+ * STM32_F103_C6_USART.h
+ *
+ *  Created on: Jul 17, 2022
+ *      Author: Mohamed Adel
+ */
+
+#ifndef INC_STM32_F103_C6_USART_H_
+#define INC_STM32_F103_C6_USART_H_
+
+#include "STM32_F103_C6_RCC.h"
+
+//config struct
+typedef struct
+{
+	uint8_t USART_Mode; //Specify TX/RX Mode
+
+}UART_config;
+
+#endif /* INC_STM32_F103_C6_USART_H_ */

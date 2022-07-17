@@ -1,0 +1,40 @@
+01:03:17 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:238:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:54:38: warning: passing argument 2 of 'MCAL_UART_Recieve_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Recieve_Data(USART1, &key, enable);
+                                      ^
+In file included from ../Src/main.c:16:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:109:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Recieve_Data(USART_typedef * Usartx , uint16_t * prxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:55:35: warning: passing argument 2 of 'MCAL_UART_Send_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Send_Data(USART1, &key, enable);
+                                   ^
+In file included from ../Src/main.c:16:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:108:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Send_Data(USART_typedef * Usartx , uint16_t * ptxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+arm-none-eabi-size   Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2616	      8	   1632	   4256	   10a0	Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers.bin
+Finished building: Drivers.list
+ 
+ 
+
+01:03:18 Build Finished. 0 errors, 3 warnings. (took 596ms)
+

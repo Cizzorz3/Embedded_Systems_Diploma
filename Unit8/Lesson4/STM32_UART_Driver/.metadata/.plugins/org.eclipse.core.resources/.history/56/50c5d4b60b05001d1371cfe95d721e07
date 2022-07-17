@@ -1,0 +1,7 @@
+
+
+#include "STM32_F103_C6_RCC.h"
+uint32_t MCAL_RCC_GetSysCLK_Freq(void);
+uint32_t MCAL_RCC_GetHCLK_Freq(void);
+uint32_t MCAL_RCC_GetPCLK1_Freq(void);
+uint32_t MCAL_RCC_GetPCLK2_Freq(void);

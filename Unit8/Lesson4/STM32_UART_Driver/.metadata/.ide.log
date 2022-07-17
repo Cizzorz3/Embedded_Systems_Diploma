@@ -1,0 +1,20 @@
+2022-07-16 13:43:42,622 [INFO] Activator:178 - 
+
+
+2022-07-16 13:43:42,623 [INFO] Activator:179 - !SESSION log4j initialized
+2022-07-16 13:44:18,843 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://download.eclipse.org:443: The target server failed to respond
+2022-07-16 13:44:18,844 [INFO] RetryExec:113 - Retrying request to {s}->https://download.eclipse.org:443
+2022-07-16 13:44:19,723 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://archive.eclipse.org:443: The target server failed to respond
+2022-07-16 13:44:19,723 [INFO] RetryExec:113 - Retrying request to {s}->https://archive.eclipse.org:443
+2022-07-16 13:44:20,592 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://download.eclipse.org:443: The target server failed to respond
+2022-07-16 13:44:20,592 [INFO] RetryExec:113 - Retrying request to {s}->https://download.eclipse.org:443
+2022-07-17 21:28:31,973 [INFO] Activator:178 - 
+
+
+2022-07-17 21:28:31,985 [INFO] Activator:179 - !SESSION log4j initialized
+2022-07-17 21:29:20,551 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://download.eclipse.org:443: The target server failed to respond
+2022-07-17 21:29:20,552 [INFO] RetryExec:113 - Retrying request to {s}->https://download.eclipse.org:443
+2022-07-17 21:29:21,405 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://archive.eclipse.org:443: The target server failed to respond
+2022-07-17 21:29:21,405 [INFO] RetryExec:113 - Retrying request to {s}->https://archive.eclipse.org:443
+2022-07-17 21:29:22,300 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://download.eclipse.org:443: The target server failed to respond
+2022-07-17 21:29:22,300 [INFO] RetryExec:113 - Retrying request to {s}->https://download.eclipse.org:443

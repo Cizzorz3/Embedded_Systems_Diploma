@@ -1,0 +1,2000 @@
+14:56:20 **** Clean-only build of configuration Debug for project Drivers ****
+make -j6 clean 
+rm -rf *
+ 
+14:56:21 **** Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_EXTI.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Keypad_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Keypad_Driver.d" -MT"HAL/Keypad_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Keypad_Driver.o"
+../Src/main.c: In function 'main':
+../Src/main.c:38:7: warning: unused variable 'pressed_key' [-Wunused-variable]
+  char pressed_key ;
+       ^~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 "../HAL/LCD.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/LCD.d" -MT"HAL/LCD.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/LCD.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Seven_segment.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Seven_segment.d" -MT"HAL/Seven_segment.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Seven_segment.o"
+../HAL/Seven_segment.c: In function 'seven_segment_start':
+../HAL/Seven_segment.c:56:3: warning: implicit declaration of function 'LCD_Write' [-Wimplicit-function-declaration]
+   LCD_Write(lcd[i]);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:57:3: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   _delay_ms(30);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:59:2: warning: implicit declaration of function 'clear_screen' [-Wimplicit-function-declaration]
+  clear_screen();
+  ^~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-size   Drivers.elf 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+   text	   data	    bss	    dec	    hex	filename
+   4344	      8	   1632	   5984	   1760	Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers.list
+ 
+Finished building: Drivers.bin
+ 
+15:35:05 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_EXTI.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_RCC.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_RCC.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Keypad_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Keypad_Driver.d" -MT"HAL/Keypad_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Keypad_Driver.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/LCD.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/LCD.d" -MT"HAL/LCD.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/LCD.o"
+../Src/main.c: In function 'main':
+../Src/main.c:38:7: warning: unused variable 'pressed_key' [-Wunused-variable]
+  char pressed_key ;
+       ^~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Seven_segment.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Seven_segment.d" -MT"HAL/Seven_segment.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Seven_segment.o"
+../HAL/Seven_segment.c: In function 'seven_segment_start':
+../HAL/Seven_segment.c:56:3: warning: implicit declaration of function 'LCD_Write' [-Wimplicit-function-declaration]
+   LCD_Write(lcd[i]);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:57:3: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   _delay_ms(30);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:59:2: warning: implicit declaration of function 'clear_screen' [-Wimplicit-function-declaration]
+  clear_screen();
+  ^~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+arm-none-eabi-size   Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4344	      8	   1632	   5984	   1760	Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers.bin
+ 
+Finished building: Drivers.list
+ 
+00:14:45 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_RCC.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_RCC.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:4:1: error: unknown type name 'UART_Config'; did you mean 'UART_config'?
+ UART_Config* Global_UART_Config;
+ ^~~~~~~~~~~
+ UART_config
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Init':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: error: 'Global_UART_config' undeclared (first use in this function); did you mean 'Global_UART_Config'?
+  Global_UART_config = UART_config ;
+  ^~~~~~~~~~~~~~~~~~
+  Global_UART_Config
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:47: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2RSTR |= 1<<14)
+                                ~~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:104:23: error: request for member 'Payload_length' in something not a structure or union
+  if(Global_UART_Config->Payload_length == Payload_length_9)
+                       ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c: In function 'MCAL_RCC_GetSysCLK_Freq':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Recieve_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:23: error: request for member 'Payload_length' in something not a structure or union
+  if(Global_UART_Config->Payload_length == Payload_length_9)
+                       ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:125:24: error: request for member 'Parity' in something not a structure or union
+   if(Global_UART_Config->Parity == UART_Parity_None)
+                        ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:16:50 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Init':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: error: 'Global_UART_config' undeclared (first use in this function); did you mean 'Global_UART_Config'?
+  Global_UART_config = UART_config ;
+  ^~~~~~~~~~~~~~~~~~
+  Global_UART_Config
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:47: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2RSTR |= 1<<14)
+                                ~~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:17:06 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Init':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: error: 'Global_UART_config' undeclared (first use in this function); did you mean 'Global_UART_Config'?
+  Global_UART_config = UART_config ;
+  ^~~~~~~~~~~~~~~~~~
+  Global_UART_Config
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:47: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2RSTR |= 1<<14)
+                                ~~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:17:12 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Init':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: error: 'Global_UART_config' undeclared (first use in this function); did you mean 'Global_UART_Config'?
+  Global_UART_config = UART_config ;
+  ^~~~~~~~~~~~~~~~~~
+  Global_UART_Config
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:47: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2RSTR |= 1<<14)
+                                ~~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:18:05 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Init':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: error: 'Global_UART_config' undeclared (first use in this function); did you mean 'Global_UART_Config'?
+  Global_UART_config = UART_config ;
+  ^~~~~~~~~~~~~~~~~~
+  Global_UART_Config
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:19:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:47: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2RSTR |= 1<<14)
+                                ~~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:18:14 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:47: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2RSTR |= 1<<14)
+                                ~~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:20:43 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_EXTI.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_RCC.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_RCC.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Keypad_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Keypad_Driver.d" -MT"HAL/Keypad_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Keypad_Driver.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c: In function 'MCAL_RCC_GetSysCLK_Freq':
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:46: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2ENR |= 1<<14)
+                                ~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'main':
+../Src/main.c:38:7: warning: unused variable 'pressed_key' [-Wunused-variable]
+  char pressed_key ;
+       ^~~~~~~~~~~
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:22:30 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_EXTI.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_RCC.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_RCC.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c: In function 'MCAL_RCC_GetSysCLK_Freq':
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../Src/main.c: In function 'main':
+../Src/main.c:38:7: warning: unused variable 'pressed_key' [-Wunused-variable]
+  char pressed_key ;
+       ^~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Keypad_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Keypad_Driver.d" -MT"HAL/Keypad_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Keypad_Driver.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/LCD.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/LCD.d" -MT"HAL/LCD.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/LCD.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Seven_segment.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Seven_segment.d" -MT"HAL/Seven_segment.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Seven_segment.o"
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:46: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2ENR |= 1<<14)
+                                ~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+make: *** Waiting for unfinished jobs....
+../HAL/Seven_segment.c: In function 'seven_segment_start':
+../HAL/Seven_segment.c:56:3: warning: implicit declaration of function 'LCD_Write' [-Wimplicit-function-declaration]
+   LCD_Write(lcd[i]);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:57:3: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   _delay_ms(30);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:59:2: warning: implicit declaration of function 'clear_screen' [-Wimplicit-function-declaration]
+  clear_screen();
+  ^~~~~~~~~~~~
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:23:58 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_RCC.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_RCC.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:46: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2ENR |= 1<<14)
+                                ~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c: In function 'MCAL_RCC_GetSysCLK_Freq':
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:24:33 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_EXTI.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_RCC.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_RCC.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Keypad_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Keypad_Driver.d" -MT"HAL/Keypad_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Keypad_Driver.o"
+../Src/main.c: In function 'main':
+../Src/main.c:38:7: warning: unused variable 'pressed_key' [-Wunused-variable]
+  char pressed_key ;
+       ^~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c: In function 'MCAL_RCC_GetSysCLK_Freq':
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: warning: implicit declaration of function 'RCC_USART1_CLK_Reset'; did you mean 'RCC_USART2_CLK_Reset'? [-Wimplicit-function-declaration]
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+   RCC_USART2_CLK_Reset
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: error: called object is not a function or function pointer
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:24:47 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_EXTI.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_RCC.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_RCC.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Keypad_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Keypad_Driver.d" -MT"HAL/Keypad_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Keypad_Driver.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c: In function 'MCAL_RCC_GetSysCLK_Freq':
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../Src/main.c: In function 'main':
+../Src/main.c:38:7: warning: unused variable 'pressed_key' [-Wunused-variable]
+  char pressed_key ;
+       ^~~~~~~~~~~
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:46: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2ENR |= 1<<14)
+                                ~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:26:02 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/LCD.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/LCD.d" -MT"HAL/LCD.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/LCD.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Seven_segment.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Seven_segment.d" -MT"HAL/Seven_segment.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Seven_segment.o"
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:46: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2ENR |= 1<<14)
+                                ~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+../HAL/Seven_segment.c: In function 'seven_segment_start':
+../HAL/Seven_segment.c:56:3: warning: implicit declaration of function 'LCD_Write' [-Wimplicit-function-declaration]
+   LCD_Write(lcd[i]);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:57:3: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   _delay_ms(30);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:59:2: warning: implicit declaration of function 'clear_screen' [-Wimplicit-function-declaration]
+  clear_screen();
+  ^~~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:27:04 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+In file included from E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:11:0,
+                 from ../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:1:
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Denit':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32f103C6.h:148:46: error: called object is not a function or function pointer
+ #define RCC_USART1_CLK_Reset() (RCC->APB2ENR |= 1<<14)
+                                ~~~~~~~~~~~~~~^~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:72:3: note: in expansion of macro 'RCC_USART1_CLK_Reset'
+   RCC_USART1_CLK_Reset()
+   ^~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:30:57 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_EXTI.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_EXTI.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_GPIO.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_GPIO.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_RCC.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_RCC.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Keypad_Driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Keypad_Driver.d" -MT"HAL/Keypad_Driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Keypad_Driver.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c: In function 'MCAL_RCC_GetSysCLK_Freq':
+../STM32_F103C6_Drivers/STM32_F103_C6_RCC.c:50:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../Src/main.c: In function 'main':
+../Src/main.c:38:7: warning: unused variable 'pressed_key' [-Wunused-variable]
+  char pressed_key ;
+       ^~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 "../HAL/LCD.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/LCD.d" -MT"HAL/LCD.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/LCD.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/Seven_segment.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/Seven_segment.d" -MT"HAL/Seven_segment.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/Seven_segment.o"
+../HAL/Seven_segment.c: In function 'seven_segment_start':
+../HAL/Seven_segment.c:56:3: warning: implicit declaration of function 'LCD_Write' [-Wimplicit-function-declaration]
+   LCD_Write(lcd[i]);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:57:3: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+   _delay_ms(30);
+   ^~~~~~~~~
+../HAL/Seven_segment.c:59:2: warning: implicit declaration of function 'clear_screen' [-Wimplicit-function-declaration]
+  clear_screen();
+  ^~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+arm-none-eabi-size   Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4344	      8	   1632	   5984	   1760	Drivers.elf
+Finished building: default.size.stdout
+Finished building: Drivers.bin
+ 
+ 
+Finished building: Drivers.list
+ 
+00:35:19 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:91:6: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+  if (USARTx == USART1)
+      ^~~~~~
+      USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:91:6: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:100:4: error: 'PinCfg' undeclared (first use in this function); did you mean 'pincfg'?
+    PinCfg.GPIO_PinNumber = GPIO_PIN_9;
+    ^~~~~~
+    pincfg
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:23: error: 'GPIO_MODE_OUTPUT_AF_PP' undeclared (first use in this function)
+    PinCfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+                       ^~~~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &PinCfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:107:23: error: 'GPIO_MODE_AF_INPUT' undeclared (first use in this function); did you mean 'GPIO_MODE_OUTPUT_AF_PP'?
+    PinCfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+                       ^~~~~~~~~~~~~~~~~~
+                       GPIO_MODE_OUTPUT_AF_PP
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:26: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_CTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                          ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:41: error: 'UART_HwFlowCtl_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_CTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                                         ^~~~~~~~~~~~~~~~~~
+                                         HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:81: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_CTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                                                                                 ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:96: error: 'UART_HwFlowCtl_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HwFlowCtl_CTS'?
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_CTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                                                                                                ^~~~~~~~~~~~~~~~~~~~~~
+                                                                                                UART_HwFlowCtl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:24: error: 'GPIO_MODE_INPUT_FLO' undeclared (first use in this function); did you mean 'GPIO_MODE_AF_INPUT'?
+     PinCfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+                        ^~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_AF_INPUT
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:119:26: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                          ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:119:41: error: 'UART_HwFlowCtl_RTS' undeclared (first use in this function); did you mean 'UART_HwFlowCtl_CTS'?
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                                         ^~~~~~~~~~~~~~~~~~
+                                         UART_HwFlowCtl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:119:81: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                                                                                 ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:26: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_CTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                          ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:81: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_CTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                                                                                 ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:26: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                          ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:81: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                                                                                 ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:196:26: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_CTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                          ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:196:81: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_CTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                                                                                 ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:205:26: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                          ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:205:81: error: 'UART_config {aka struct <anonymous>}' has no member named 'HwFlowCtl'
+    if (Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS || Global_UART_Config->HwFlowCtl == UART_HwFlowCtl_RTS_CTS)
+                                                                                 ^~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:89:19: warning: unused variable 'pincfg' [-Wunused-variable]
+  GPIO_Pinconfig_t pincfg ;
+                   ^~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:37:18 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:100:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_9;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:101:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_AF_output_Push_pull_Mode;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:102:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:106:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_10;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:107:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:107:23: error: 'GPIO_MODE_AF_INPUT' undeclared (first use in this function)
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+                       ^~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:107:23: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:113:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_11;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:24: error: 'GPIO_MODE_INPUT_FLO' undeclared (first use in this function); did you mean 'GPIO_MODE_AF_INPUT'?
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+                        ^~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_AF_INPUT
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:119:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:122:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_12;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:24: error: 'GPIO_MODE_OUTPUT_AF_PP' undeclared (first use in this function); did you mean 'GPIO_MODE_INPUT_FLO'?
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+                        ^~~~~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_INPUT_FLO
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:124:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:134:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART2)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:143:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_2;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:144:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:145:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:149:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_3;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:156:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_0;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:165:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_1;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:166:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:167:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:186:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_10;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:187:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:188:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:192:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_11;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:193:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:199:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_13;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:200:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:208:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_14;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:209:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:210:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:37:48 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:106:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_10;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:107:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:107:23: error: 'GPIO_MODE_AF_INPUT' undeclared (first use in this function)
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+                       ^~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:107:23: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:113:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_11;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:24: error: 'GPIO_MODE_INPUT_FLO' undeclared (first use in this function); did you mean 'GPIO_MODE_AF_INPUT'?
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+                        ^~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_AF_INPUT
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:119:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:122:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_12;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:24: error: 'GPIO_MODE_OUTPUT_AF_PP' undeclared (first use in this function); did you mean 'GPIO_MODE_INPUT_FLO'?
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+                        ^~~~~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_INPUT_FLO
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:124:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:134:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART2)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:143:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_2;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:144:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:145:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:149:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_3;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:156:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_0;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:165:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_1;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:166:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:167:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:186:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_10;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:187:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:188:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:192:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_11;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:193:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:199:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_13;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:200:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:208:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_14;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:209:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:210:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:38:18 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:47: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:113:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_11;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:24: error: 'GPIO_MODE_INPUT_FLO' undeclared (first use in this function)
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+                        ^~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:119:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:122:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_12;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:24: error: 'GPIO_MODE_OUTPUT_AF_PP' undeclared (first use in this function); did you mean 'GPIO_MODE_INPUT_FLO'?
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+                        ^~~~~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_INPUT_FLO
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:124:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:134:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART2)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:143:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_2;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:144:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:145:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:149:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_3;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:23: error: 'GPIO_MODE_AF_INPUT' undeclared (first use in this function); did you mean 'GPIO_MODE_INPUT_FLO'?
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+                       ^~~~~~~~~~~~~~~~~~
+                       GPIO_MODE_INPUT_FLO
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:156:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_0;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:165:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_1;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:166:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:167:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:186:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_10;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:187:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:188:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:192:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_11;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:193:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:199:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_13;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:200:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:208:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_14;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:209:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:210:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:38:19 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:47: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:113:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_11;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:24: error: 'GPIO_MODE_INPUT_FLO' undeclared (first use in this function)
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+                        ^~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:119:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:122:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_12;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:24: error: 'GPIO_MODE_OUTPUT_AF_PP' undeclared (first use in this function); did you mean 'GPIO_MODE_INPUT_FLO'?
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+                        ^~~~~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_INPUT_FLO
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:124:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:134:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART2)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:143:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_2;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:144:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:145:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:149:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_3;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:23: error: 'GPIO_MODE_AF_INPUT' undeclared (first use in this function); did you mean 'GPIO_MODE_INPUT_FLO'?
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+                       ^~~~~~~~~~~~~~~~~~
+                       GPIO_MODE_INPUT_FLO
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:156:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_0;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:165:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_1;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:166:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:167:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:186:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_10;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:187:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:188:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:192:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_11;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:193:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:199:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_13;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:200:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:208:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_14;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:209:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:210:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:38:39 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:47: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:110:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:113:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_11;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:114:24: error: 'GPIO_MODE_INPUT_FLO' undeclared (first use in this function)
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+                        ^~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:119:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:122:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_12;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:24: error: 'GPIO_MODE_OUTPUT_AF_PP' undeclared (first use in this function); did you mean 'GPIO_MODE_INPUT_FLO'?
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+                        ^~~~~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_INPUT_FLO
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:124:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:134:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART2)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:143:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_2;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:144:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:145:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:149:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_3;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:23: error: 'GPIO_MODE_AF_INPUT' undeclared (first use in this function); did you mean 'GPIO_MODE_INPUT_FLO'?
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+                       ^~~~~~~~~~~~~~~~~~
+                       GPIO_MODE_INPUT_FLO
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:156:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_0;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:165:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_1;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:166:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:167:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:186:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_10;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:187:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:188:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:192:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_11;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:193:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:199:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_13;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:200:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:208:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_14;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:209:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:210:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:40:10 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:28: error: 'GPIO_MODE_OUTPUT_AF_PP' undeclared (first use in this function)
+     pincfg.GPIO_Pin_Mode = GPIO_MODE_OUTPUT_AF_PP;
+                            ^~~~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:123:28: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:134:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART2)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:143:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_2;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:144:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:145:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:149:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_3;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:23: error: 'GPIO_MODE_AF_INPUT' undeclared (first use in this function); did you mean 'GPIO_MODE_OUTPUT_AF_PP'?
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+                       ^~~~~~~~~~~~~~~~~~
+                       GPIO_MODE_OUTPUT_AF_PP
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:156:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_0;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:24: error: 'GPIO_MODE_INPUT_FLO' undeclared (first use in this function); did you mean 'GPIO_MODE_AF_INPUT'?
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+                        ^~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_AF_INPUT
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:165:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_1;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:166:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:167:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:186:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_10;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:187:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:188:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:192:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_11;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:193:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:199:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_13;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:200:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:208:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_14;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:209:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:210:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:40:46 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:134:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART2)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:134:7: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:143:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_2;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:144:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:144:23: error: 'GPIO_MODE_OUTPUT_AF_PP' undeclared (first use in this function)
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+                       ^~~~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:145:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:149:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_3;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:23: error: 'GPIO_MODE_AF_INPUT' undeclared (first use in this function); did you mean 'GPIO_MODE_OUTPUT_AF_PP'?
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+                       ^~~~~~~~~~~~~~~~~~
+                       GPIO_MODE_OUTPUT_AF_PP
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:156:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_0;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:24: error: 'GPIO_MODE_INPUT_FLO' undeclared (first use in this function); did you mean 'GPIO_MODE_AF_INPUT'?
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+                        ^~~~~~~~~~~~~~~~~~~
+                        GPIO_MODE_AF_INPUT
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:165:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_1;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:166:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:167:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:186:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_10;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:187:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:188:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+    pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+           ^~~~~~~~~~~~~~~~~
+           GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:192:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+    pincfg.GPIO_PinNumber = GPIO_PIN_11;
+           ^~~~~~~~~~~~~~
+           GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:193:10: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+    pincfg.GPIO_MODE = GPIO_MODE_AF_INPUT;
+          ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:199:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_13;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:200:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_INPUT_FLO;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:208:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_PinNumber'; did you mean 'GPIO_Pin_Number'?
+     pincfg.GPIO_PinNumber = GPIO_PIN_14;
+            ^~~~~~~~~~~~~~
+            GPIO_Pin_Number
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:209:11: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_MODE'
+     pincfg.GPIO_MODE = GPIO_MODE_OUTPUT_AF_PP;
+           ^
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:210:12: error: 'GPIO_Pinconfig_t {aka struct <anonymous>}' has no member named 'GPIO_Output_Speed'; did you mean 'GPIO_Pin_Speed'?
+     pincfg.GPIO_Output_Speed = GPIO_SPEED_10M;
+            ^~~~~~~~~~~~~~~~~
+            GPIO_Pin_Speed
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:42:45 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:143:29: error: 'GPIO_PIN_22' undeclared (first use in this function); did you mean 'GPIO_PIN_12'?
+    pincfg.GPIO_Pin_Number = GPIO_PIN_22;
+                             ^~~~~~~~~~~
+                             GPIO_PIN_12
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:143:29: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:27: error: 'GPIO_Pin_Mode_AF_INPUT' undeclared (first use in this function)
+    pincfg.GPIO_Pin_Mode = GPIO_Pin_Mode_AF_INPUT;
+                           ^~~~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:28: error: 'GPIO_Pin_Mode_INPUT_FLO' undeclared (first use in this function); did you mean 'GPIO_Pin_Mode_AF_INPUT'?
+     pincfg.GPIO_Pin_Mode = GPIO_Pin_Mode_INPUT_FLO;
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+                            GPIO_Pin_Mode_AF_INPUT
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:177:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART3)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:42:53 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:27: error: 'GPIO_Pin_Mode_AF_INPUT' undeclared (first use in this function)
+    pincfg.GPIO_Pin_Mode = GPIO_Pin_Mode_AF_INPUT;
+                           ^~~~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:150:27: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:28: error: 'GPIO_Pin_Mode_INPUT_FLO' undeclared (first use in this function); did you mean 'GPIO_Pin_Mode_AF_INPUT'?
+     pincfg.GPIO_Pin_Mode = GPIO_Pin_Mode_INPUT_FLO;
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+                            GPIO_Pin_Mode_AF_INPUT
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:177:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART3)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:43:07 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'HW_flwctl_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:47: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:153:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:157:28: error: 'GPIO_Pin_Mode_INPUT_FLO' undeclared (first use in this function)
+     pincfg.GPIO_Pin_Mode = GPIO_Pin_Mode_INPUT_FLO;
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_CTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_CTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:177:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART3)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:193:27: error: 'GPIO_Pin_Mode_AF_INPUT' undeclared (first use in this function); did you mean 'GPIO_Pin_Mode_INPUT_FLO'?
+    pincfg.GPIO_Pin_Mode = GPIO_Pin_Mode_AF_INPUT;
+                           ^~~~~~~~~~~~~~~~~~~~~~
+                           GPIO_Pin_Mode_INPUT_FLO
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:43:54 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'HW_flwctl_RTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_RTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:47: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:162:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_RTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_RTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:177:7: error: 'USARTx' undeclared (first use in this function); did you mean 'USART3'?
+   if (USARTx == USART3)
+       ^~~~~~
+       USART3
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:193:27: error: 'GPIO_Pin_Mode_AF_INPUT' undeclared (first use in this function)
+    pincfg.GPIO_Pin_Mode = GPIO_Pin_Mode_AF_INPUT;
+                           ^~~~~~~~~~~~~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:196:47: error: 'UART_HW_flow_control_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_RTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_CTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               UART_HW_flow_control_RTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:200:28: error: 'GPIO_Pin_Mode_INPUT_FLO' undeclared (first use in this function); did you mean 'GPIO_Pin_Mode_AF_INPUT'?
+     pincfg.GPIO_Pin_Mode = GPIO_Pin_Mode_INPUT_FLO;
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+                            GPIO_Pin_Mode_AF_INPUT
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:45:00 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:205:47: error: 'UART_HW_flow_control_RTS' undeclared (first use in this function); did you mean 'HW_flwctl_RTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+                                               HW_flwctl_RTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:205:47: note: each undeclared identifier is reported only once for each function it appears in
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:205:114: error: 'UART_HW_flow_control_RTS_CTS' undeclared (first use in this function); did you mean 'UART_HW_flow_control_RTS'?
+    if (Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS || Global_UART_Config->HW_flow_control == UART_HW_flow_control_RTS_CTS)
+                                                                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                  UART_HW_flow_control_RTS
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:45:21 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+arm-none-eabi-size   Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4344	      8	   1632	   5984	   1760	Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers.bin
+Finished building: Drivers.list
+ 
+ 
+00:45:46 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+arm-none-eabi-size   Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4344	      8	   1632	   5984	   1760	Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers.bin
+ 
+Finished building: Drivers.list
+ 
+00:46:35 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'USART1_IRQHandler':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:269:22: error: 'UART_config {aka struct <anonymous>}' has no member named 'P_IRQ_CallBack'; did you mean 'P_IRQ_Callback'?
+  Global_UART_Config->P_IRQ_CallBack();
+                      ^~~~~~~~~~~~~~
+                      P_IRQ_Callback
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'USART2_IRQHandler':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:274:22: error: 'UART_config {aka struct <anonymous>}' has no member named 'P_IRQ_CallBack'; did you mean 'P_IRQ_Callback'?
+  Global_UART_Config->P_IRQ_CallBack();
+                      ^~~~~~~~~~~~~~
+                      P_IRQ_Callback
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'USART3_IRQHandler':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:280:22: error: 'UART_config {aka struct <anonymous>}' has no member named 'P_IRQ_CallBack'; did you mean 'P_IRQ_Callback'?
+  Global_UART_Config->P_IRQ_CallBack();
+                      ^~~~~~~~~~~~~~
+                      P_IRQ_Callback
+make: *** [STM32_F103C6_Drivers/subdir.mk:33: STM32_F103C6_Drivers/STM32_F103_C6_USART.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:47:01 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+arm-none-eabi-size   Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4404	      8	   1640	   6052	   17a4	Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers.bin
+Finished building: Drivers.list
+ 
+ 
+00:54:24 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:18:0:
+../Src/main.c: In function 'main':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:19:35: error: expected ')' before numeric constant
+ #define UART_Mode_Tx_RX (uint32_t(1<<3 | 1<<2))
+                                   ^
+../Src/main.c:50:24: note: in expansion of macro 'UART_Mode_Tx_RX'
+  uartcnfg.USART_Mode = UART_Mode_Tx_RX;
+                        ^~~~~~~~~~~~~~~
+../Src/main.c:51:17: error: 'Usart1' undeclared (first use in this function); did you mean 'qsort'?
+  MCAL_UART_Init(Usart1, &uartcnfg);
+                 ^~~~~~
+                 qsort
+../Src/main.c:51:17: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:56:38: warning: passing argument 2 of 'MCAL_UART_Recieve_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Recieve_Data(Usart1, &key, enable);
+                                      ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:109:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Recieve_Data(USART_typedef * Usartx , uint16_t * prxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:57:35: warning: passing argument 2 of 'MCAL_UART_Send_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Send_Data(Usart1, &key, enable);
+                                   ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:108:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Send_Data(USART_typedef * Usartx , uint16_t * ptxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:54:50 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:18:0:
+../Src/main.c: In function 'main':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:19:35: error: expected ')' before numeric constant
+ #define UART_Mode_Tx_RX (uint32_t(1<<3 | 1<<2))
+                                   ^
+../Src/main.c:50:24: note: in expansion of macro 'UART_Mode_Tx_RX'
+  uartcnfg.USART_Mode = UART_Mode_Tx_RX;
+                        ^~~~~~~~~~~~~~~
+../Src/main.c:52:26: error: 'Usart1' undeclared (first use in this function); did you mean 'qsort'?
+  MCAL_UART_Set_GPIO_Pins(Usart1);
+                          ^~~~~~
+                          qsort
+../Src/main.c:52:26: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:56:38: warning: passing argument 2 of 'MCAL_UART_Recieve_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Recieve_Data(Usart1, &key, enable);
+                                      ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:109:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Recieve_Data(USART_typedef * Usartx , uint16_t * prxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:57:35: warning: passing argument 2 of 'MCAL_UART_Send_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Send_Data(Usart1, &key, enable);
+                                   ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:108:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Send_Data(USART_typedef * Usartx , uint16_t * ptxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:54:54 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:18:0:
+../Src/main.c: In function 'main':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:19:35: error: expected ')' before numeric constant
+ #define UART_Mode_Tx_RX (uint32_t(1<<3 | 1<<2))
+                                   ^
+../Src/main.c:50:24: note: in expansion of macro 'UART_Mode_Tx_RX'
+  uartcnfg.USART_Mode = UART_Mode_Tx_RX;
+                        ^~~~~~~~~~~~~~~
+../Src/main.c:56:30: error: 'Usart1' undeclared (first use in this function); did you mean 'qsort'?
+       MCAL_UART_Recieve_Data(Usart1, &key, enable);
+                              ^~~~~~
+                              qsort
+../Src/main.c:56:30: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:56:38: warning: passing argument 2 of 'MCAL_UART_Recieve_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Recieve_Data(Usart1, &key, enable);
+                                      ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:109:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Recieve_Data(USART_typedef * Usartx , uint16_t * prxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:57:35: warning: passing argument 2 of 'MCAL_UART_Send_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Send_Data(Usart1, &key, enable);
+                                   ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:108:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Send_Data(USART_typedef * Usartx , uint16_t * ptxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:54:59 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:18:0:
+../Src/main.c: In function 'main':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:19:35: error: expected ')' before numeric constant
+ #define UART_Mode_Tx_RX (uint32_t(1<<3 | 1<<2))
+                                   ^
+../Src/main.c:50:24: note: in expansion of macro 'UART_Mode_Tx_RX'
+  uartcnfg.USART_Mode = UART_Mode_Tx_RX;
+                        ^~~~~~~~~~~~~~~
+../Src/main.c:56:38: warning: passing argument 2 of 'MCAL_UART_Recieve_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Recieve_Data(USART1, &key, enable);
+                                      ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:109:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Recieve_Data(USART_typedef * Usartx , uint16_t * prxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:57:35: warning: passing argument 2 of 'MCAL_UART_Send_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Send_Data(USART1, &key, enable);
+                                   ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:108:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Send_Data(USART_typedef * Usartx , uint16_t * ptxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:55:42 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Set_GPIO_Pins':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103:4: warning: implicit declaration of function 'MCAL_GPIO_Init'; did you mean 'MCAL_GPIO_init'? [-Wimplicit-function-declaration]
+    MCAL_GPIO_Init(GPIOA, &pincfg);
+    ^~~~~~~~~~~~~~
+    MCAL_GPIO_init
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:56:38: warning: passing argument 2 of 'MCAL_UART_Recieve_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Recieve_Data(USART1, &key, enable);
+                                      ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:109:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Recieve_Data(USART_typedef * Usartx , uint16_t * prxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:57:35: warning: passing argument 2 of 'MCAL_UART_Send_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Send_Data(USART1, &key, enable);
+                                   ^
+In file included from ../Src/main.c:18:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:108:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Send_Data(USART_typedef * Usartx , uint16_t * ptxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32_F103C6_Drivers/STM32_F103_C6_USART.o: In function `MCAL_UART_Set_GPIO_Pins':
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/Debug/../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:103: undefined reference to `MCAL_GPIO_Init'
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/Debug/../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:108: undefined reference to `MCAL_GPIO_Init'
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/Debug/../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:146: undefined reference to `MCAL_GPIO_Init'
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/Debug/../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:151: undefined reference to `MCAL_GPIO_Init'
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/Debug/../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:189: undefined reference to `MCAL_GPIO_Init'
+STM32_F103C6_Drivers/STM32_F103_C6_USART.o:E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/Debug/../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:194: more undefined references to `MCAL_GPIO_Init' follow
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:51: Drivers.elf] Error 1
+"make -j6 all" terminated with exit code 2. Build might be incomplete.
+00:56:52 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:231:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+arm-none-eabi-size   Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2616	      8	   1632	   4256	   10a0	Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers.bin
+Finished building: Drivers.list
+ 
+ 
+01:03:17 **** Incremental Build of configuration Debug for project Drivers ****
+make -j6 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32_F103C6_Drivers/STM32_F103_C6_USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/HAL/Inc" -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -I../Inc -I"E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32_F103C6_Drivers/STM32_F103_C6_USART.d" -MT"STM32_F103C6_Drivers/STM32_F103_C6_USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32_F103C6_Drivers/STM32_F103_C6_USART.o"
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c: In function 'MCAL_UART_Send_Data':
+../STM32_F103C6_Drivers/STM32_F103_C6_USART.c:238:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   while(!Usartx->SR & 1<<7);
+         ^~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:54:38: warning: passing argument 2 of 'MCAL_UART_Recieve_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Recieve_Data(USART1, &key, enable);
+                                      ^
+In file included from ../Src/main.c:16:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:109:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Recieve_Data(USART_typedef * Usartx , uint16_t * prxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:55:35: warning: passing argument 2 of 'MCAL_UART_Send_Data' from incompatible pointer type [-Wincompatible-pointer-types]
+       MCAL_UART_Send_Data(USART1, &key, enable);
+                                   ^
+In file included from ../Src/main.c:16:0:
+E:/Courses/Embedded_Systems_Course/Unit8/Lesson4/STM32_UART_Driver/Drivers/STM32_F103C6_Drivers/inc/STM32_F103_C6_USART.h:108:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned char *'
+ void MCAL_UART_Send_Data(USART_typedef * Usartx , uint16_t * ptxbuffer , enum Polling_mechanism Polling_en);
+      ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\Courses\Embedded_Systems_Course\Unit8\Lesson4\STM32_UART_Driver\Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  Drivers.elf  > "Drivers.list"
+arm-none-eabi-objcopy  -O binary  Drivers.elf  "Drivers.bin"
+arm-none-eabi-size   Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2616	      8	   1632	   4256	   10a0	Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: Drivers.bin
+Finished building: Drivers.list
+ 
+ 

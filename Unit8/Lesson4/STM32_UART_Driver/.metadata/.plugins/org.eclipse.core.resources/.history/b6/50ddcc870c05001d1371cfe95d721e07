@@ -1,0 +1,25 @@
+#include "STM32_F103_C6_RCC.h"
+
+//Set and cleared by software to control the division factor of the APB Low speed clock (PCLK1).
+/*
+/0xx: HCLK not divided
+100: HCLK divided by 2
+101: HCLK divided by 4
+110: HCLK divided by 8
+111: HCLK divided by 16
+*/
+
+const uint8_t APB_Prescaler_table[8] = {0,0,0,0,1,2,3,4};
+uint32_t MCAL_RCC_GetSysCLK_Freq(void);
+uint32_t MCAL_RCC_GetHCLK_Freq(void);
+uint32_t MCAL_RCC_GetPCLK1_Freq(void)
+{
+	//Bits 10:8 PPRE1[2:0]: APB Low-speed prescaler (APB1)
+	return (MCAL_RCC_GetHCLK_Freq() >> APB_Prescaler_table[(RCC->CFGR >> 8 )&0b111]);
+}
+uint32_t MCAL_RCC_GetPCLK2_Freq(void)
+{
+	//Bits 13:11 PPRE2[2:0]: APB high-speed prescaler (APB2)
+	return (MCAL_RCC_GetHCLK_Freq() >> APB_Prescaler_table[(RCC->CFGR >> 11 )&0b111]);
+
+}
