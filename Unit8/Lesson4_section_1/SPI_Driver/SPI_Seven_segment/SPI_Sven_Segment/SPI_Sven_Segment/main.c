@@ -9,10 +9,14 @@
 #include <util/delay.h>
 void send_cmd(uint8_t Add , uint8_t value)
 {
-	PORTB &=~ (1<<SS);
-	spi_master_send_char(Add);
-	spi_master_send_char(value);
-	PORTB |= (1<<SS);
+	 PORTB&=~(1<<SS);
+	 /*Send the command*/
+	 SPDR=Add;
+	 while(!(SPSR&(1<<SPIF)));
+	 SPDR=value;
+	 while(!(SPSR&(1<<SPIF)));
+
+	 PORTB|=(1<<SS);
 	
 }
 int main(void)
@@ -30,9 +34,9 @@ int main(void)
 		for(i=1;i<9;i++)
 		{
 			send_cmd(i,a++);
-			
+			_delay_ms(1000);
+		
 		}
-		_delay_ms(300);
 	
 		
     }

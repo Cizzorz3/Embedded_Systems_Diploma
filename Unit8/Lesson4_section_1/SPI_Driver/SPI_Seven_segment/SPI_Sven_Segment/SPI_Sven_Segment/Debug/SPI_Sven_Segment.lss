@@ -3,29 +3,29 @@ SPI_Sven_Segment.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000000f0  00000000  00000000  00000054  2**1
+  0 .text         000000e4  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00000144  2**0
+  1 .data         00000000  00800060  00800060  00000138  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  00000144  2**0
+  2 .comment      00000030  00000000  00000000  00000138  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000174  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000168  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000060  00000000  00000000  000001b0  2**0
+  4 .debug_aranges 00000060  00000000  00000000  000001a4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000007f8  00000000  00000000  00000210  2**0
+  5 .debug_info   000007c2  00000000  00000000  00000204  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 0000068a  00000000  00000000  00000a08  2**0
+  6 .debug_abbrev 00000681  00000000  00000000  000009c6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000393  00000000  00000000  00001092  2**0
+  7 .debug_line   000003a8  00000000  00000000  00001047  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000090  00000000  00000000  00001428  2**2
+  8 .debug_frame  00000088  00000000  00000000  000013f0  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000003d0  00000000  00000000  000014b8  2**0
+  9 .debug_str    000003d0  00000000  00000000  00001478  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000101  00000000  00000000  00001888  2**0
+ 10 .debug_loc    000000fb  00000000  00000000  00001848  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000040  00000000  00000000  00001989  2**0
+ 11 .debug_ranges 00000040  00000000  00000000  00001943  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -60,149 +60,137 @@ Disassembly of section .text:
   5a:	d8 e0       	ldi	r29, 0x08	; 8
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
-  60:	0e 94 45 00 	call	0x8a	; 0x8a <main>
-  64:	0c 94 76 00 	jmp	0xec	; 0xec <_exit>
+  60:	0e 94 43 00 	call	0x86	; 0x86 <main>
+  64:	0c 94 70 00 	jmp	0xe0	; 0xe0 <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 0000006c <send_cmd>:
- */ 
 
 #include "SPI/SPI.h"
 #include <util/delay.h>
 void send_cmd(uint8_t Add , uint8_t value)
 {
-  6c:	cf 93       	push	r28
-  6e:	c6 2f       	mov	r28, r22
-	PORTB &=~ (1<<SS);
-  70:	98 b3       	in	r25, 0x18	; 24
-  72:	9f 7e       	andi	r25, 0xEF	; 239
-  74:	98 bb       	out	0x18, r25	; 24
-	spi_master_send_char(Add);
-  76:	0e 94 72 00 	call	0xe4	; 0xe4 <spi_master_send_char>
-	spi_master_send_char(value);
-  7a:	8c 2f       	mov	r24, r28
-  7c:	0e 94 72 00 	call	0xe4	; 0xe4 <spi_master_send_char>
-	PORTB |= (1<<SS);
-  80:	88 b3       	in	r24, 0x18	; 24
-  82:	80 61       	ori	r24, 0x10	; 16
-  84:	88 bb       	out	0x18, r24	; 24
+	 PORTB&=~(1<<SS);
+  6c:	98 b3       	in	r25, 0x18	; 24
+  6e:	9f 7e       	andi	r25, 0xEF	; 239
+  70:	98 bb       	out	0x18, r25	; 24
+	 /*Send the command*/
+	 SPDR=Add;
+  72:	8f b9       	out	0x0f, r24	; 15
+	 while(!(SPSR&(1<<SPIF)));
+  74:	77 9b       	sbis	0x0e, 7	; 14
+  76:	fe cf       	rjmp	.-4      	; 0x74 <send_cmd+0x8>
+	 
+	 SPDR=value;
+  78:	6f b9       	out	0x0f, r22	; 15
+	 while(!(SPSR&(1<<SPIF)));
+  7a:	77 9b       	sbis	0x0e, 7	; 14
+  7c:	fe cf       	rjmp	.-4      	; 0x7a <send_cmd+0xe>
+
+	 PORTB|=(1<<SS);
+  7e:	88 b3       	in	r24, 0x18	; 24
+  80:	80 61       	ori	r24, 0x10	; 16
+  82:	88 bb       	out	0x18, r24	; 24
+  84:	08 95       	ret
+
+00000086 <main>:
 	
 }
-  86:	cf 91       	pop	r28
-  88:	08 95       	ret
-
-0000008a <main>:
 int main(void)
 {
 	uint8_t a=0 , i;
 	spi_master_output_init();
-  8a:	0e 94 6d 00 	call	0xda	; 0xda <spi_master_output_init>
+  86:	0e 94 6b 00 	call	0xd6	; 0xd6 <spi_master_output_init>
 	send_cmd(0x09,0xff);
-  8e:	6f ef       	ldi	r22, 0xFF	; 255
-  90:	89 e0       	ldi	r24, 0x09	; 9
-  92:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
+  8a:	6f ef       	ldi	r22, 0xFF	; 255
+  8c:	89 e0       	ldi	r24, 0x09	; 9
+  8e:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
 	send_cmd(0x0A,0xff);
-  96:	6f ef       	ldi	r22, 0xFF	; 255
-  98:	8a e0       	ldi	r24, 0x0A	; 10
-  9a:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
+  92:	6f ef       	ldi	r22, 0xFF	; 255
+  94:	8a e0       	ldi	r24, 0x0A	; 10
+  96:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
 	send_cmd(0x0B,0xf7);
-  9e:	67 ef       	ldi	r22, 0xF7	; 247
-  a0:	8b e0       	ldi	r24, 0x0B	; 11
-  a2:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
+  9a:	67 ef       	ldi	r22, 0xF7	; 247
+  9c:	8b e0       	ldi	r24, 0x0B	; 11
+  9e:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
 	send_cmd(0x0c,0x01);
-  a6:	61 e0       	ldi	r22, 0x01	; 1
-  a8:	8c e0       	ldi	r24, 0x0C	; 12
-  aa:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
-	PORTB |= (1<<SS);
+  a2:	61 e0       	ldi	r22, 0x01	; 1
+  a4:	8c e0       	ldi	r24, 0x0C	; 12
+  a6:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
+	 PORTB|=(1<<SS);
 	
 }
 int main(void)
 {
 	uint8_t a=0 , i;
-  ae:	60 e0       	ldi	r22, 0x00	; 0
+  aa:	60 e0       	ldi	r22, 0x00	; 0
 	send_cmd(0x0c,0x01);
     /* Replace with your application code */
     while (1) 
     {
 
 		for(i=1;i<9;i++)
-  b0:	c1 e0       	ldi	r28, 0x01	; 1
-  b2:	07 c0       	rjmp	.+14     	; 0xc2 <main+0x38>
+  ac:	c1 e0       	ldi	r28, 0x01	; 1
+  ae:	10 c0       	rjmp	.+32     	; 0xd0 <main+0x4a>
 		{
 			send_cmd(i,a++);
-  b4:	d1 e0       	ldi	r29, 0x01	; 1
-  b6:	d6 0f       	add	r29, r22
-  b8:	8c 2f       	mov	r24, r28
-  ba:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
-	send_cmd(0x0c,0x01);
-    /* Replace with your application code */
-    while (1) 
-    {
-
-		for(i=1;i<9;i++)
-  be:	cf 5f       	subi	r28, 0xFF	; 255
-		{
-			send_cmd(i,a++);
-  c0:	6d 2f       	mov	r22, r29
-	send_cmd(0x0c,0x01);
-    /* Replace with your application code */
-    while (1) 
-    {
-
-		for(i=1;i<9;i++)
-  c2:	c9 30       	cpi	r28, 0x09	; 9
-  c4:	b8 f3       	brcs	.-18     	; 0xb4 <main+0x2a>
+  b0:	d1 e0       	ldi	r29, 0x01	; 1
+  b2:	d6 0f       	add	r29, r22
+  b4:	8c 2f       	mov	r24, r28
+  b6:	0e 94 36 00 	call	0x6c	; 0x6c <send_cmd>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
-  c6:	2f e5       	ldi	r18, 0x5F	; 95
-  c8:	8a ee       	ldi	r24, 0xEA	; 234
-  ca:	90 e0       	ldi	r25, 0x00	; 0
-  cc:	21 50       	subi	r18, 0x01	; 1
-  ce:	80 40       	sbci	r24, 0x00	; 0
-  d0:	90 40       	sbci	r25, 0x00	; 0
-  d2:	e1 f7       	brne	.-8      	; 0xcc <main+0x42>
-  d4:	00 c0       	rjmp	.+0      	; 0xd6 <main+0x4c>
-  d6:	00 00       	nop
-  d8:	eb cf       	rjmp	.-42     	; 0xb0 <main+0x26>
+  ba:	2f e3       	ldi	r18, 0x3F	; 63
+  bc:	8d e0       	ldi	r24, 0x0D	; 13
+  be:	93 e0       	ldi	r25, 0x03	; 3
+  c0:	21 50       	subi	r18, 0x01	; 1
+  c2:	80 40       	sbci	r24, 0x00	; 0
+  c4:	90 40       	sbci	r25, 0x00	; 0
+  c6:	e1 f7       	brne	.-8      	; 0xc0 <main+0x3a>
+  c8:	00 c0       	rjmp	.+0      	; 0xca <main+0x44>
+  ca:	00 00       	nop
+	send_cmd(0x0c,0x01);
+    /* Replace with your application code */
+    while (1) 
+    {
 
-000000da <spi_master_output_init>:
+		for(i=1;i<9;i++)
+  cc:	cf 5f       	subi	r28, 0xFF	; 255
+		{
+			send_cmd(i,a++);
+  ce:	6d 2f       	mov	r22, r29
+	send_cmd(0x0c,0x01);
+    /* Replace with your application code */
+    while (1) 
+    {
+
+		for(i=1;i<9;i++)
+  d0:	c9 30       	cpi	r28, 0x09	; 9
+  d2:	70 f3       	brcs	.-36     	; 0xb0 <main+0x2a>
+  d4:	eb cf       	rjmp	.-42     	; 0xac <main+0x26>
+
+000000d6 <spi_master_output_init>:
 	DDRB |= (1<<MISO) ;
 }
 
 void spi_master_output_init(void)
 {
 	DDRB = (1<<SS) | (1<<MOSI) | (1<<SCK);
-  da:	80 eb       	ldi	r24, 0xB0	; 176
-  dc:	87 bb       	out	0x17, r24	; 23
+  d6:	80 eb       	ldi	r24, 0xB0	; 176
+  d8:	87 bb       	out	0x17, r24	; 23
 	SPCR = (1<<SPR0) | (1<<MSTR) | (1<<SPE) ;
-  de:	81 e5       	ldi	r24, 0x51	; 81
-  e0:	8d b9       	out	0x0d, r24	; 13
-  e2:	08 95       	ret
+  da:	81 e5       	ldi	r24, 0x51	; 81
+  dc:	8d b9       	out	0x0d, r24	; 13
+  de:	08 95       	ret
 
-000000e4 <spi_master_send_char>:
-	
-}
+000000e0 <_exit>:
+  e0:	f8 94       	cli
 
-uint8_t spi_master_send_char(uint8_t Data)
-{
-	SPDR = Data;
-  e4:	8f b9       	out	0x0f, r24	; 15
-	while(!SPSR & (1<<SPIF));
-  e6:	8e b1       	in	r24, 0x0e	; 14
-	return SPDR;
-  e8:	8f b1       	in	r24, 0x0f	; 15
-
-}
-  ea:	08 95       	ret
-
-000000ec <_exit>:
-  ec:	f8 94       	cli
-
-000000ee <__stop_program>:
-  ee:	ff cf       	rjmp	.-2      	; 0xee <__stop_program>
+000000e2 <__stop_program>:
+  e2:	ff cf       	rjmp	.-2      	; 0xe2 <__stop_program>
