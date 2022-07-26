@@ -1,0 +1,8 @@
+STM32_F103_C6_SPI.c:24:6:MCAL_SPI_Init	24	static
+STM32_F103_C6_SPI.c:97:6:MCAL_SPI_DeInit	16	static
+STM32_F103_C6_SPI.c:111:6:MCAL_SPI_GPIO_set_pins	24	static
+STM32_F103_C6_SPI.c:225:6:MCAL_SPI_send_data	24	static
+STM32_F103_C6_SPI.c:231:6:MCAL_SPI_recieve_data	24	static
+STM32_F103_C6_SPI.c:237:6:MCAL_SPI_send_and_recieve_data	24	static
+STM32_F103_C6_SPI.c:249:6:SPI1_IRQHandler	16	static
+STM32_F103_C6_SPI.c:258:6:SPI2_IRQHandler	16	static
